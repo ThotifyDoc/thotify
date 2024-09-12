@@ -14,16 +14,20 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Golang',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-						{ label: 'Golang', slug: 'golang/golang' },
-					],
+						{ label: 'Introduction', slug: 'golang/intro', badge: 'In progress' },
+					]
+					,
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Javascript',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Introduction', slug: 'javascript/intro', badge: 'empty' },
+					]
+					,
 				},
 			],
 		}),

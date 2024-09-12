@@ -1,55 +1,40 @@
-# Starlight Starter Kit: Basics
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+# 🌟 Thotify Documentation 🌟
 
+## Qu'est-ce que c'est ? 🤔
+
+Astro Starlight Documentation est votre guichet unique pour toute la documentation sur le web. Que vous soyez un développeur chevronné ou un débutant curieux, notre application vous offre une expérience de documentation rapide, accessible et agréable.
+
+## Pourquoi Astro Starlight ? 🌠
+
+Astro Starlight combine la puissance et la performance d'Astro avec des outils de documentation de pointe. Vous pouvez étendre Starlight avec vos intégrations et bibliothèques Astro préférées, et utiliser Markdown, Markdoc, ou MDX pour créer votre contenu.
+
+## Commencer 🛠️
+
+- Clonez le dépôt :
+```bash
+git clone https://github.com/mangozmorgan/thotify.git
 ```
-npm create astro@latest -- --template starlight
-```
+- Installez les dépendances :  `npm install`
+- Démarrer le serveur :  `npm run dev`
+- Rejoindre l'application :  http://localhost:4322/thotify/
+- Créer ta propre branche pour nous transmettre ton savoir 
+    
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+## Informations ressources 👀
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Starlight recherche les fichiers **.md ou .mdx** dans le répertoire **src/content/docs/**. Chaque fichier est exposé comme une route basée sur son nom de fichier.
 
-## 🚀 Project Structure
+Les images peuvent être ajoutées dans **src/assets/** et intégrées dans le Markdown avec un lien relatif.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Les ressources statiques, comme les favicons, peuvent être placées dans le répertoire **public/**.
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   │   └── config.ts
-│   └── env.d.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
 
-Static assets, like favicons, can be placed in the `public/` directory.
+##  Et quand j'ai fini ? 🐈‍⬛
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- ⚠️ **Pas besoin de build le projet**, c'est **github Action** qui va s'occuper de ça pour nous !
+- Commit tes changements avec un message **court** et **précis**.
+- **Push** tout ça, ensuite, rendez vous sur https://github.com/mangozmorgan/thotify/pulls pour créer ta **Pull Request** ( hé oui on fait ça comme des pros ! )
+- Si ta  PR est acceptée, elle sera **merge** dans la branche **main** et **push** en ligne !
