@@ -32,6 +32,20 @@ export default defineConfig({
 					,
 				},
 				{
+					label: 'Treejs',
+					items: [
+						{ 
+							label: 'Introduction',
+							slug: 'golang/demo',
+							badge: {
+								text: 'In progress',
+								class: 'badge-in-progress' 
+							},
+						 },
+					]
+					,
+				},
+				{
 					label: 'Example Structure',
 					items: [
 						
