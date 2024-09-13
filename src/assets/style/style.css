@@ -1,0 +1,22 @@
+.badge {
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  /* Badge for "In progress" */
+  .badge-in-progress {
+    border-color:  rgb(183, 0, 255);
+  }
+  
+  /* Badge for "Completed" */
+  .badge-new {
+    border-color: green;
+  }
+  
+  /* Badge for "Draft" */
+  .badge-draft {
+    border-color: red;
+  }
+  

@@ -5,10 +5,13 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://mangozmorgan.github.io',
-	base: '/thotify/',  // Nom du repository GitHub
+	base: '',  // Nom du repository GitHub
 	integrations: [
 		starlight({
 			title: 'Thotify',
+			customCss: [
+				'./src/assets/style/style.css',
+			  ],
 			social: {
 				github: 'https://github.com/mangozmorgan/thotify',
 			},
@@ -17,7 +20,14 @@ export default defineConfig({
 					label: 'Golang',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Introduction', slug: 'golang/intro', badge: 'In progress' },
+						{ 
+							label: 'Introduction',
+							slug: 'golang/intro',
+							badge: {
+								text: 'In progress',
+								class: 'badge-in-progress' 
+							},
+						 },
 					]
 					,
 				},
@@ -27,7 +37,10 @@ export default defineConfig({
 						
 						{ 
 							label: 'Level 1',
-							badge: 'Example' ,
+							badge: {
+								text: 'exemple',
+								class: 'badge-new' 
+							},
 							items: [
 								{ label: 'Introduction', slug: 'tests/level1/intro' }
 
