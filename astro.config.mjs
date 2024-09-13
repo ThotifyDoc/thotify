@@ -48,21 +48,20 @@ export default defineConfig({
 						},
 					]
 				},
-				{
-					label: 'Treejs',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ 
-							label: 'Introduction',
-							slug: 'Treejs/demo',
-							badge: {
-								text: 'In progress',
-								class: 'badge-in-progress' 
-							},
-						 },
-					]
-					,
-				},
+				// {
+				// 	label: 'Treejs',
+				// 	items: [
+				// 		{ 
+				// 			label: 'Introduction',
+				// 			slug: 'Treejs/demo',
+				// 			badge: {
+				// 				text: 'In progress',
+				// 				class: 'badge-in-progress' 
+				// 			},
+				// 		},
+				// 	]
+				// 	,
+				// },
 			],
 		}),
 	],
