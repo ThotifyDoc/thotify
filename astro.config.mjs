@@ -8,7 +8,7 @@ export default defineConfig({
 	base: '/thotify/',  // Nom du repository GitHub
 	integrations: [
 		starlight({
-			title: 'Thotify420',
+			title: 'Thotify',
 			customCss: [
 				'./src/assets/style/style.css',
 			  ],
