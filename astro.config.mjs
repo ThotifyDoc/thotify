@@ -22,6 +22,14 @@ export default defineConfig({
 					,
 				},
 				{
+					label: 'Javascript',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Introduction', slug: 'javascript/intro', badge: 'empty' },
+					]
+					,
+				},
+				{
 					label: 'Treejs',
 					items: [
 						// Each item here is one entry in the navigation menu.
@@ -33,14 +41,6 @@ export default defineConfig({
 								class: 'badge-in-progress' 
 							},
 						 },
-					]
-					,
-				},
-				{
-					label: 'Javascript',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Introduction', slug: 'javascript/intro', badge: 'empty' },
 					]
 					,
 				},
