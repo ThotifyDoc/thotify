@@ -22,12 +22,18 @@ export default defineConfig({
 					,
 				},
 				{
-					label: 'Javascript',
+					label: 'Example Structure',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Introduction', slug: 'javascript/intro', badge: 'empty' },
+						
+						{ 
+							label: 'Level 1',
+							badge: 'Example' ,
+							items: [
+								{ label: 'Introduction', slug: 'tests/level1/intro' }
+
+							]
+						},
 					]
-					,
 				},
 			],
 		}),
