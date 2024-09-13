@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://mangozmorgan.github.io',
-	base: '/thotify/',  // Nom du repository GitHub
+	base: '',  // Nom du repository GitHub
 	integrations: [
 		starlight({
 			title: 'Thotify',
