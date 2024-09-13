@@ -38,3 +38,8 @@ Les ressources statiques, comme les favicons, peuvent être placées dans le ré
 - Commit tes changements avec un message **court** et **précis**.
 - **Push** tout ça, ensuite, rendez vous sur https://github.com/mangozmorgan/thotify/pulls pour créer ta **Pull Request** ( hé oui on fait ça comme des pros ! )
 - Si ta  PR est acceptée, elle sera **merge** dans la branche **main** et **push** en ligne !
+  
+## Tips  & Tricks 🤫
+- Quand tu va ajouté de nouveaux tutos, n'oublie pas d'utiliser **les badges** exemple : 
+  - `{ label: 'Introduction', slug: 'tests/level1/intro', badge: 'In progress' }`
+
