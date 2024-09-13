@@ -32,7 +32,7 @@ export default defineConfig({
 					,
 				},
 				{
-					label: 'Example Structure',
+					label: 'Exemple Structure',
 					items: [
 						
 						{ 
