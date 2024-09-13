@@ -13,7 +13,7 @@ export default defineConfig({
 				'./src/assets/style/style.css',
 			  ],
 			social: {
-				github: 'https://github.com/mangozmorgan/thotify',
+				github: 'https://github.com/ThotifyDoc/thotify',
 			},
 			sidebar: [
 				{
