@@ -25,11 +25,34 @@ export default defineConfig({
 							slug: 'golang/intro',
 							badge: {
 								text: 'In progress',
-								class: 'badge-in-progress' 
+								class: 'badge-in-progress'
 							},
 						 },
 					]
 					,
+				},{
+					label: 'Minio Client',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ 
+							label: 'Introduction',
+							slug: 'minio/getstarted',
+							
+						}
+						,{ 
+							label: 'Cheat Sheet',
+							slug: 'minio/cheatsheet',
+						},
+						{ 
+							label: 'Crédits',
+							slug: 'minio/credentials',
+						},
+					]
+					,
+					badge: {
+						text: 'Nouveau',
+						class: 'badge-new'
+					},
 				},
 				{
 					label: 'Exemple Structure',
