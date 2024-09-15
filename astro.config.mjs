@@ -17,6 +17,21 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Home',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ 
+							label: 'Sommaire',
+							slug: 'home/summary',
+							badge: {
+								text: 'In progress',
+								class: 'badge-in-progress'
+							},
+						 },
+					]
+					,
+				},
+				{
 					label: 'Golang',
 					items: [
 						// Each item here is one entry in the navigation menu.
