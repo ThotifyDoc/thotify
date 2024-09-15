@@ -7,16 +7,16 @@
   
   /* Badge for "In progress" */
   .badge-in-progress {
-    border-color:  rgb(183, 0, 255);
+    border-color:  rgb(183, 0, 255) !important;
   }
   
   /* Badge for "Completed" */
   .badge-new {
-    border-color: green;
+    border-color: green !important;
   }
   
   /* Badge for "Draft" */
   .badge-draft {
-    border-color: red;
+    border-color: red !important;
   }
   
