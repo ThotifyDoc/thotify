@@ -2,12 +2,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-// https://astro.build/config
+
 export default defineConfig({
 	site: 'https://github.com/ThotifyDoc/thotify',
 	base: '/thotify/',  // Nom du repository GitHub
 	integrations: [
+		
 		starlight({
+			
 			title: 'Thotify',
 			customCss: [
 				'./src/assets/style/style.css',
@@ -15,9 +17,11 @@ export default defineConfig({
 			social: {
 				github: 'https://github.com/ThotifyDoc/thotify',
 			},
+			
 			sidebar: [
 				{
 					label: 'Home',
+					collapsed: true,
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ 
@@ -33,8 +37,8 @@ export default defineConfig({
 				},
 				{
 					label: 'Golang',
+					collapsed: true,
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ 
 							label: 'Introduction',
 							slug: 'golang/intro',
@@ -47,8 +51,8 @@ export default defineConfig({
 					,
 				},{
 					label: 'Minio Client',
+					collapsed: true,
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ 
 							label: 'Introduction',
 							slug: 'minio/getstarted',
@@ -69,37 +73,7 @@ export default defineConfig({
 						class: 'badge-new'
 					},
 				},
-				{
-					label: 'Exemple Structure',
-					items: [
-						
-						{ 
-							label: 'Level 1',
-							badge: {
-								text: 'exemple',
-								class: 'badge-new' 
-							},
-							items: [
-								{ label: 'Introduction', slug: 'tests/level1/intro' }
-
-							]
-						},
-					]
-				},
-				// {
-				// 	label: 'Treejs',
-				// 	items: [
-				// 		{ 
-				// 			label: 'Introduction',
-				// 			slug: 'Treejs/demo',
-				// 			badge: {
-				// 				text: 'In progress',
-				// 				class: 'badge-in-progress' 
-				// 			},
-				// 		},
-				// 	]
-				// 	,
-				// },
+				
 			],
 		}),
 	],
