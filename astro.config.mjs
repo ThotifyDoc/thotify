@@ -74,25 +74,6 @@ export default defineConfig({
 						class: 'badge-new'
 					},
 				},
-				// {
-				// 	label: 'Exemple Structure',
-				// 	collapsed: true,
-				// 	items: [
-						
-				// 		{ 
-				// 			label: 'Level 1',
-				// 			badge: {
-				// 				text: 'exemple',
-				// 				class: 'badge-new' 
-				// 			},
-				// 			items: [
-				// 				{ label: 'Introduction', slug: 'tests/level1/intro' },
-
-				// 			]
-				// 		},
-				// 	],
-					
-				// },
 			],
 		}),
 	],

@@ -23,20 +23,8 @@ const { children } = Astro.props;
   <div id="content-container">
     <slot></slot>
   </div>
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-      const isAuthenticated = localStorage.getItem('firebase') ? true : false;
-      const contentContainer = document.getElementById('content-container');
-      const loading = document.getElementById('loading');
+  <script src="/thotify/sidebar-dynamic.js" type="module"></script>
+  <script src="/src/scripts/checkAuth.js" type="module"></script>
 
-      if (!isAuthenticated) {
-        loading.innerHTML = '<p>Content protected...</p>';
-        window.location.href = '/thotify/home/summary';
-      } else {
-        loading.style.display = 'none';
-        contentContainer.style.display = 'block';
-      }
-    });
-  </script>
 </body>
 </html>
