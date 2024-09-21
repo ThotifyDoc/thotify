@@ -1,0 +1,42 @@
+---
+const { children } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth Check</title>
+  <style>
+    #content-container {
+      display: none; /* Masquer le contenu initialement */
+    }
+    #loading {
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">Loading...</div>
+  <div id="content-container">
+    <slot></slot>
+  </div>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      const isAuthenticated = localStorage.getItem('firebase') ? true : false;
+      const contentContainer = document.getElementById('content-container');
+      const loading = document.getElementById('loading');
+
+      if (!isAuthenticated) {
+        loading.innerHTML = '<p>Content protected...</p>';
+        window.location.href = '/thotify/home/summary';
+      } else {
+        loading.style.display = 'none';
+        contentContainer.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

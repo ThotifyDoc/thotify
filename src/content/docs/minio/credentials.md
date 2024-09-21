@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/BaseLayout.astro
 title: Crédits
 description: Crédits.
 ---

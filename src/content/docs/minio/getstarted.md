@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/BaseLayout.astro
 title: Guide pour Minio Client (client S3 AWS)
 description: A guide in Minio Client.
 ---

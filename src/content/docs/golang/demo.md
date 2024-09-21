@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/BaseLayout.astro
 title: Démonstration GO_
 description: toto
 ---
