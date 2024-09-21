@@ -36,11 +36,18 @@ Les ressources statiques, comme les favicons, peuvent être placées dans le ré
 
 ##  Et quand j'ai fini ? 🐈‍⬛
 
-- N'oublie pas de **signer** ta doc ! 🤙🤙
+- N'oublie pas de **signer** ta doc sinon ta pull request ne sera pas acceptée ! 🤙🤙 ( voir étape signature )
 - ⚠️ **Pas besoin de build le projet**, c'est **github Action** qui va s'occuper de ça pour nous !
 - Commit tes changements avec un message **court** et **précis**.
 - **Push** tout ça, ensuite, rendez vous sur https://github.com/mangozmorgan/thotify/pulls pour créer ta **Pull Request** ( hé oui on fait ça comme des pros ! )
 - Si ta  PR est acceptée, elle sera **merge** dans la branche **main** et **push** en ligne !
+
+
+## Signer  ta doc ? 🤔
+### Ajouter ta signature : 
+- Dans le fichier public/signatureData.ts rajoute tes informations sur le modèle de ce qui est défini
+- Le fichier de signature doit s'appeler **credentials.mdx** et doit suivre la même structure que tout les autres fichiers de ce type ( voir: *src/assets/content/docs/minio/index.mdx* )  
+
   
 ## Tips  & Tricks 🤫
 - Quand tu va ajouté de nouveaux tutos, n'oublie pas d'utiliser **les badges** exemple : 
