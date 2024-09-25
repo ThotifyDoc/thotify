@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/BaseLayout.astro
 title: Cheat Sheet pour Minio Client
 description: Cheat Sheet.
 ---

@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/BaseLayout.astro
 title: Sommaire
 description: Summary of documentation
 ---
