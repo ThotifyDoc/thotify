@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/BaseLayout.astro
 title: A Golang Guide
 description: A guide in Golang.
 ---
