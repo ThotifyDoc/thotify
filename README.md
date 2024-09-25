@@ -36,6 +36,7 @@ Les ressources statiques, comme les favicons, peuvent être placées dans le ré
 
 ##  Et quand j'ai fini ? 🐈‍⬛
 
+- N'oublie pas de **signer** ta doc ! 🤙🤙
 - ⚠️ **Pas besoin de build le projet**, c'est **github Action** qui va s'occuper de ça pour nous !
 - Commit tes changements avec un message **court** et **précis**.
 - **Push** tout ça, ensuite, rendez vous sur https://github.com/mangozmorgan/thotify/pulls pour créer ta **Pull Request** ( hé oui on fait ça comme des pros ! )
