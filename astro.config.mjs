@@ -88,6 +88,21 @@ export default defineConfig({
 					]
 					,
 				},
+				{
+					label: 'Kubernetes',
+					collapsed: true,
+					items: [
+						{ 
+							label: 'Debug',
+							slug: 'kubernetes/gettingstarted',
+							badge: {
+								text: 'In progress',
+								class: 'badge-in-progress'
+							},
+						 },
+					]
+					,
+				},
 				
 			],
 		}),
