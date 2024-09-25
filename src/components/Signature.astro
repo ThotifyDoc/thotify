@@ -1,0 +1,24 @@
+---
+import { adminSignatures } from '../../public/signatureData';
+const { name } = Astro.props;
+
+if (!adminSignatures[name as keyof typeof adminSignatures]) {
+  console.error(`No user found for name: ${name}`);
+}
+
+const user = adminSignatures[name as keyof typeof adminSignatures];
+---
+
+{user ? (
+  <div style="display: flex; align-items: center; padding: 10px; border-top: 1px solid #ddd; margin: 20px 0;">
+    <img src={user.image} alt={user.name} style="border-radius: 50%; width: 50px; height: 50px; margin-right: 10px;">
+    <div>
+      <h3 style="margin: 0; font-size: 1.2em;">{user.name}</h3>
+      <p style="margin: 0; color: #555;">{user.words}</p>
+      <p style="margin: 0; color: #555;">✉️ <a href={`mailto:${user.email}`} style="text-decoration: none; color: #007bff;">{user.email}</a></p>
+      <p style="margin: 0; color: #555;">🌐 <a href={user.github} style="text-decoration: none; color: #007bff;">GitHub</a></p>
+    </div>
+  </div>
+) : (
+  <p>User not found</p>
+)}
