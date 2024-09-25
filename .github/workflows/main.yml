@@ -1,9 +1,6 @@
 name: Notify Google Chat
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
