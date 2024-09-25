@@ -1,0 +1,26 @@
+name: Notify Google Chat
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: notify_google_chat:
+      runs-on: ubuntu-latest
+      needs: cypress
+      steps:
+        - name: Notify Google Chat
+          if: ${{ always() }} # Use always to ensure that the notification is also send on failure of former steps
+          uses: SimonScholz/google-chat-action@main
+          with:
+            webhookUrl: 'https://chat.googleapis.com/v1/spaces/AAAAFRzZf0Y/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=6rGh5ODVeRx6pZ96DBVdx4-gf3QSncWsYS4AH3qvra8'
+            title: MAJ du projet Thotify
+            subtitle: Update successfully
