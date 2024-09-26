@@ -13,6 +13,6 @@ jobs:
         if: ${{ always() }} # Use always to ensure that the notification is also send on failure of former steps
         uses: SimonScholz/google-chat-action@main
         with:
-          webhookUrl: 'https://chat.googleapis.com/v1/spaces/AAAAMZVoXW0/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=clmUzAUa9ixKAFvHMDSxe5w6pt8nEio1e9EqVGLN19E'
+          webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
           title: Un pull request sur Thotify !
           subtitle: Hey Admins! You have to merge a new Pull Request  ! 🪄
