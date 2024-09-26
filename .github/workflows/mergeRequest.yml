@@ -1,12 +1,12 @@
-name: Notify Google Chat
+name: Notify merge on Google Chat 
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  notify_google_chat:
+  notify_pull_request_google_chat:
     runs-on: ubuntu-latest
     steps:
       - name: Notify Google Chat
@@ -14,5 +14,5 @@ jobs:
         uses: SimonScholz/google-chat-action@main
         with:
           webhookUrl: 'https://chat.googleapis.com/v1/spaces/AAAAFRzZf0Y/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=6rGh5ODVeRx6pZ96DBVdx4-gf3QSncWsYS4AH3qvra8'
-          title: MAJ du projet Thotify
-          subtitle: PullRequest is done ! 🪄
+          title: Nouvelle mise à jour sur Thotify !
+          subtitle: Merge request successfully 😻
