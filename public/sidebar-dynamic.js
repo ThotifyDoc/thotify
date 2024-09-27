@@ -1,8 +1,7 @@
 import { isUserLoggedIn, logout } from './src/scripts/firebase.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-
   isUserLoggedIn().then((isAuthenticated) => {
-
     if (isAuthenticated) {
       const sidebar = document.querySelector('.top-level');
       if (sidebar) {

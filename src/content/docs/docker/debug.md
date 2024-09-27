@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/BaseLayout.astro
 title: Docker
 description: Docker debug 
 ---
