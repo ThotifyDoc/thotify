@@ -1,5 +1,5 @@
-import { isUserLoggedIn, logout } from './src/scripts/firebase.js';
-
+import { isUserLoggedIn, logout } from '../scripts/firebase.js';
+console.log('testeuuuhg')
 document.addEventListener('DOMContentLoaded', () => {
   isUserLoggedIn().then((isAuthenticated) => {
     if (isAuthenticated) {

@@ -1,4 +1,9 @@
-
+---
+import SidebarDynamic from '../components/SidebarDynamic.astro';
+import Firebase from '../components/Firebase.astro';
+---
+<SidebarDynamic></SidebarDynamic>
+<Firebase></Firebase>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +20,5 @@
       <slot/>
     </main>
   </div>
-  <!-- <script type="module" src="/src/scripts/firebase.js"></script> -->
-  <script src="/thotify/sidebar-dynamic.js" type="module"></script>
 </body>
 </html>
