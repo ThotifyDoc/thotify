@@ -91,6 +91,34 @@ export default defineConfig({
             class: "badge-in-progress",
           },
         },
+        {
+          label: "Docker",
+          collapsed: true,
+          items: [
+            {
+              label: "Debug",
+              slug: "docker/debug",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
+        {
+          label: "Kubernetes",
+          collapsed: true,
+          items: [
+            {
+              label: "Debug",
+              slug: "kubernetes/gettingstarted",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
       ],
     }),
   ],
