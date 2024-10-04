@@ -42,3 +42,4 @@ Pour exemple la capacité de son disque dur, sa RAM ou le nombre de coeur de son
     - Host-only : Pas d'accès internet, la VM crée un reseau privé entre l'ordi et la VM
     - Custom : Choix d'un réseau virtuel spécifique.
     - LAN segment : VM complètement isolée
+- test
