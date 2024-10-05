@@ -84,12 +84,6 @@ jobs:
     needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
-      - name: test variable
-        run: |
-            echo "${{toJSON(github)}}"
-            echo "${{github.event.commits[0].author.name}}"
-            echo "${{github.event.commits[0].message}}"
-
       - name: Notify Google Chat
         if: ${{ always() }} # Utilisez 'always' pour vous assurer que la notification est envoyée même en cas d'échec des étapes précédentes
         uses: SimonScholz/google-chat-action@main
@@ -104,7 +98,7 @@ jobs:
                 "collapsible": true,
                 "widgets": [
                   { "decoratedText": { "text": "- Titre du commit  : ${{github.event.commits[0].message}}" } },
-                  { "decoratedText": { "text": "- Auteur : ${{ github.event.commits[0].author.name }}" } }
+                  { "decoratedText": { "text": "- Auteur : ${{ github.event.commits[1].author.username }}" } }
                 ]
               },
               {
