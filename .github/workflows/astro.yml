@@ -86,7 +86,8 @@ jobs:
     steps:
       - name: Test variable
         run: |
-          echo "${{toJSON(github.event)}}"
+          echo "${{github.event.commits[0].author.name}}"
+          echo "${{github.event.commits[0].message}}"
       - name: Notify Google Chat
         if: ${{ always() }} # Utilisez 'always' pour vous assurer que la notification est envoyée même en cas d'échec des étapes précédentes
         uses: SimonScholz/google-chat-action@main
