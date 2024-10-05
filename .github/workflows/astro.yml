@@ -86,6 +86,7 @@ jobs:
     steps:
       - name: Test variable
         run: |
+          echo "${{github.event}}"
           echo "${{github.event.commits[0].author.name}}"
           echo "${{github.event.commits[0].message}}"
       - name: Notify Google Chat
