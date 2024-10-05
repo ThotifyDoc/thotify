@@ -84,13 +84,19 @@ jobs:
     needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
+      - name: test variable
+        run: |
+            echo "${{toJSON(github.event.pull_request)}}"
+            echo "${{github.event.commits[0].author.name}}"
+            echo "${{github.event.commits[0].message}}"
+
       - name: Notify Google Chat
         if: ${{ always() }} # Utilisez 'always' pour vous assurer que la notification est envoyée même en cas d'échec des étapes précédentes
         uses: SimonScholz/google-chat-action@main
         with:
           webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
-          title: ${{ needs.build.result == 'successaa' && needs.deploy.result == 'successaa' && 'Déploiement réussi sur Thotify ! 🚀' || 'Échec du déploiement sur Thotify ❌' }}
-          subtitle: ${{ needs.build.result == 'successaa' && needs.deploy.result =='successaa' && 'Les modifications ont été fusionnées avec succès ! 😻' || 'Il y à eu une erreur lors de la mise en ligne..' }}
+          title: ${{ needs.build.result == 'success' && needs.deploy.result == 'success' && 'Déploiement réussi sur Thotify ! 🚀' || 'Échec du déploiement sur Thotify ❌' }}
+          subtitle: ${{ needs.build.result == 'success' && needs.deploy.result =='success' && 'Les modifications ont été fusionnées avec succès ! 😻' || 'Il y à eu une erreur lors de la mise en ligne..' }}
           additionalSections: |
             [              
               {
