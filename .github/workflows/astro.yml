@@ -1,18 +1,12 @@
-# Sample workflow for building and deploying an Astro site to GitHub Pages
-#
-# To get started with Astro see: https://docs.astro.build/en/getting-started/
-#
+
 name: Deploy Astro site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    
 permissions:
   contents: read
   pages: write
@@ -23,8 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BUILD_PATH: "." # default value when not using subfolders
-  # BUILD_PATH: subfolder
+  BUILD_PATH: "." 
 
 jobs:
   build:
@@ -101,6 +94,14 @@ jobs:
           additionalSections: |
             [
               {
+                "header": "Détails de la fusion",
+                "collapsible": true,
+                "widgets": [
+                  { "decoratedText": { "text": "- Branche : ${{ github.ref }}" } },
+                  { "decoratedText": { "text": "- Titre du commit : ${{ github.event.head_commit.message }}" } }
+                ]
+              },
+              {
                 "header": "Résultats des jobs",
                 "collapsible": true,
                 "widgets": [
@@ -109,3 +110,4 @@ jobs:
                 ]
               }
             ]
+
