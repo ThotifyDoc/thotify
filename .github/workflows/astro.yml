@@ -98,7 +98,7 @@ jobs:
                 "collapsible": true,
                 "widgets": [
                   { "decoratedText": { "text": "- Branche  : ${{ needs.build.result }}" } },
-                  { "decoratedText": { "text": "- Titre du commit : ${{ github.event.head_commit.message }}" } }
+                  { "decoratedText": { "text": "- Titre du commit : ${{ toJson(github.event.head_commit.message) }}" } }
                 ]
               },
               {
