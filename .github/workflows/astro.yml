@@ -106,8 +106,6 @@ jobs:
               "widgets": [
                 { "decoratedText": { "text": "- Build : ${{ needs.build.result }}" } },
                 { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } }
-              ]
-            }
-          ]'
+              ]}]'
 
 
