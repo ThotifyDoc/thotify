@@ -91,21 +91,23 @@ jobs:
           webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
           title: ${{ needs.build.result == 'success' && needs.deploy.result == 'success' && 'Déploiement réussi sur Thotify ! 🚀' || 'Échec du déploiement sur Thotify ❌' }}
           subtitle: ${{ needs.build.result == 'success' && needs.deploy.result =='success' && 'Les modifications ont été fusionnées avec succès ! 😻' || 'Il y à eu une erreur lors de la mise en ligne..' }}
-          additionalSections: '[
-            {
-              "header": "Détails de la fusion",
-              "collapsible": true,
-              "widgets": [
-                { "decoratedText": { "text": "- Branche : ${{ github.ref }}" } },
-                { "decoratedText": { "text": "- Titre du commit : ${{ github.event.head_commit.message }}" } }
-              ]
-            },
-            {
-              "header": "Résultats des jobs",
-              "collapsible": true,
-              "widgets": [
-                { "decoratedText": { "text": "- Build : ${{ needs.build.result }}" } },
-                { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } }
-              ]}]'
-
+          additionalSections: |
+            [
+              {
+                "header": "Détails de la fusion",
+                "collapsible": true,
+                "widgets": [
+                  { "decoratedText": { "text": "Branche : ${{ github.ref }}" } },
+                  { "decoratedText": { "text": "- Titre du commit : ${{ github.event.head_commit.message }}" } },
+                ]
+              },
+              {
+                "header": "Résultats des jobs",
+                "collapsible": true,
+                "widgets": [
+                  { "decoratedText": { "text": "- Build : ${{ needs.build.result }}" } },
+                  { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } },
+                ]
+              }
+            ]
 
