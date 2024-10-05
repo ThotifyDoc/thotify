@@ -94,11 +94,11 @@ jobs:
           additionalSections: |
             [              
               {
-                "header": "Résultats des jobs",
+                "header": "Détails de la fusion",
                 "collapsible": true,
                 "widgets": [
-                  { "decoratedText": { "text": "- Build : ${{ needs.build.result }}" } },
-                  { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } }
+                  { "decoratedText": { "text": "- Branche  : ${{ needs.build.result }}" } },
+                  { "decoratedText": { "text": "- Titre du commit : ${{ github.event.head_commit.message }}" } }
                 ]
               },
               {
