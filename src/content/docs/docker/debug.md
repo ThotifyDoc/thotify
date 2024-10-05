@@ -24,10 +24,10 @@ docker compose --build #pour les compose
 ## Mariadb & user permission
 
 Mariadb: votre user n'a pas tous les droits comparé a votre root. C'est normal, mais cela implique que vous ne pouvez pas vous connecter avec localhost:3306
-Afin d'accéder depuis votre pc à votre container sql il faut utilise l'adresse public 0.0.0.0:3306 et non pas localhost. Si vous voulez utiliser localhost il faudra augmenter les droit de votre utilisateur 'user'.
+Afin d'accéder depuis votre pc à votre container sql il faut utilise l'adresse public 0.0.0.0:3306 et non pas localhost. Si vous voulez utiliser localhost il faudra augmenter les droit de votre utilisateur 'user'
 
 ## Composer PHP 
-Si vous souhaitez dockeriser un projet contenant du composer il faudra également configurer & builder la dockerisation de composer.
+Si vous souhaitez dockeriser un projet contenant du composer il faudra également configurer & builder la dockerisation de composer
 
 # Exemple de dockerfile pour composer 
 ```bash
