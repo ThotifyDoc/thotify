@@ -98,7 +98,7 @@ jobs:
                 "collapsible": true,
                 "widgets": [
                   { "decoratedText": { "text": "- Build : ${{ needs.build.result }}" } },
-                  { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } },
+                  { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } }
                 ]
               }
             ]
