@@ -71,7 +71,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: blabla
+      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
@@ -89,8 +89,8 @@ jobs:
         uses: SimonScholz/google-chat-action@main
         with:
           webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
-          title: ${{ needs.build.result == 'success' && needs.deploy.result == 'success' && 'Déploiement réussi sur Thotify ! 🚀' || 'Échec du déploiement sur Thotify ❌' }}
-          subtitle: ${{ needs.build.result == 'success' && needs.deploy.result =='success' && 'Les modifications ont été fusionnées avec succès ! 😻' || 'Il y à eu une erreur lors de la mise en ligne..' }}
+          title: ${{ needs.build.result == 'successaa' && needs.deploy.result == 'successaa' && 'Déploiement réussi sur Thotify ! 🚀' || 'Échec du déploiement sur Thotify ❌' }}
+          subtitle: ${{ needs.build.result == 'successaa' && needs.deploy.result =='successaa' && 'Les modifications ont été fusionnées avec succès ! 😻' || 'Il y à eu une erreur lors de la mise en ligne..' }}
           additionalSections: |
             [              
               {
