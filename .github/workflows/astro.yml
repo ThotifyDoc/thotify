@@ -71,7 +71,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: blabla
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
@@ -97,8 +97,8 @@ jobs:
                 "header": "Détails de la fusion",
                 "collapsible": true,
                 "widgets": [
-                  { "decoratedText": { "text": "- Titre du commit  : ${{github.event.commits[0].author.name}}" } },
-                  { "decoratedText": { "text": "- Auteur : ${{ github.event.commits[0].message }}" } }
+                  { "decoratedText": { "text": "- Titre du commit  : ${{github.event.commits[0].message}}" } },
+                  { "decoratedText": { "text": "- Auteur : ${{ github.event.commits[0].author.name }}" } }
                 ]
               },
               {
