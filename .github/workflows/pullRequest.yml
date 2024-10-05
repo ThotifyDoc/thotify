@@ -9,6 +9,11 @@ jobs:
   notify_pull_request_google_chat:
     runs-on: ubuntu-latest
     steps:
+      - name: test variable
+        run: |
+              echo "${{toJSON(github.event.pull_request)}}"
+              echo "${{github.event.commits[0].author.name}}"
+              echo "${{github.event.commits[0].message}}"
       - name: Notify Google Chat
         if: github.event.pull_request.user.login != 'ThotifyDoc' && github.event.pull_request.user.login != 'joris-verguldezoone'
         uses: SimonScholz/google-chat-action@main
