@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Notify Google Chat
-        if: github.event.pull_request.user.login != 'ThotifyDoc' && github.event.pull_request.user.login != 'joris-verguldezoone'
+        if: github.event.pull_request.user.login != 'mangozmorgan' && github.event.pull_request.user.login != 'joris-verguldezoone'
         uses: SimonScholz/google-chat-action@main
         with:
           webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
