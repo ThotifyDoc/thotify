@@ -96,13 +96,24 @@ export default defineConfig({
 							label: 'Debug',
 							slug: 'kubernetes/gettingstarted',
 							badge: {
+								text: 'Linux',
+								class: 'badge-linux'
+							},
+							
+						 },
+						 { 
+							label: 'CheatSheet',
+							slug: 'kubernetes/cheatsheet',
+							badge: {
 								text: 'In progress',
 								class: 'badge-in-progress'
 							},
+							
 						 },
 					]
 					,
 				},
+				
 				
 			],
 		}),

@@ -32,7 +32,8 @@ helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dash
 
 Activer un proxy pour accéder facilement au localhost et ne pas a avoir exposer un **ingress**
 ```bash
-kubectl proxy
+    kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
+    kubectl proxy
 ```
 
 Générer des credentials pour vous connecter au dashboard qui contient les données de tous les nodes
