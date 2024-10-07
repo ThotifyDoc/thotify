@@ -111,12 +111,30 @@ export default defineConfig({
           items: [
             {
               label: "Debug",
+              slug: "kubernetes/cheatsheet",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
+              label: "Getting started",
               slug: "kubernetes/gettingstarted",
               badge: {
                 text: "In progress",
                 class: "badge-in-progress",
               },
             },
+            {
+              label: "CoreConcepts",
+              slug: "kubernetes/coreconcepts",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            
+
           ],
         },
       ],

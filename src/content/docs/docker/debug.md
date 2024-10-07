@@ -42,7 +42,7 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd
+    && docker-php-ext-install gd \
     && docker-php-ext-install pdo pdo_mysql # pour activer l'extension
 
 
@@ -73,3 +73,13 @@ A l'aide de dockerfile il faudra dockeriser certaines commande qui s'éxécute a
 ```bash
 CMD symfony server:start
 ``` 
+## Ca ne build pas mais tu ne le sais pas !
+Verifier si l'utilisation de différentes version docker est présente tel que 
+```bash
+    docker compose up --build
+```
+```bash
+    docker-compose up --build
+```
+
+Deuxieme façon de faire, tester si des ajout des log/print sont pris en compte lors de build puis des up
