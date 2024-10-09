@@ -133,8 +133,20 @@ export default defineConfig({
                 class: "badge-in-progress",
               },
             },
-            
-
+          ],
+        },
+        {
+          label: "Culture G",
+          collapsed: true,
+          items: [
+            {
+              label: "Compiler vs Interpreter",
+              slug: "culture/compiler-interpreter",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
           ],
         },
       ],
