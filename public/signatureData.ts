@@ -25,4 +25,11 @@ export const adminSignatures: AdminSignatures = {
     github: "https://github.com/Aurelily/",
     image: "https://avatars.githubusercontent.com/u/79448947?v=4",
   },
+  joris: {
+    name: "Hardjojo",
+    email: "joris.verguldezoone.pro@laplateforme.io",
+    words: "Karate dancer, support violent dancing",
+    github: "https://github.com/joris-verguldezoone",
+    image: "https://avatars.githubusercontent.com/u/71430046?v=4",
+  },
 };
