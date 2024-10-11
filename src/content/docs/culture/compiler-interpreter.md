@@ -51,6 +51,9 @@ En somme, l'interprétation permet d'exécuter directement le code source, ce qu
 | Continue de traduire le programme jusqu’à ce que la première erreur soit rencontrée. Par conséquent, le débogage est facile. | Il génère le message d’erreur uniquement après avoir analysé l’ensemble du programme. Par conséquent, le débogage est relativement difficile. |
 | Exemple d’interpréteur: Python, Ruby. | Exemple de compilateur: C, C++. |
 
+## Compilation JIT (Just-In-Time)
+Comme dans le cas de **Java ou du V8 pour JavaScript**, une partie du code est compilée juste avant d'être exécutée, offrant un compromis entre la compilation et l'interprétation.
+
 ## Ressources: 
 https://perso.esiee.fr/~courivad/C/rst/02-compilation.html
 https://laconsole.dev/blog/differences-langage-compile-interprete/

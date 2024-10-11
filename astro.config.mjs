@@ -149,6 +149,15 @@ export default defineConfig({
               },
             },
             {
+              label: "Languages paradigm",
+              slug: "culture/languages-paradigm",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
               label: "Crédits",
               slug: "culture/credentials",
             },
