@@ -142,10 +142,24 @@ export default defineConfig({
             {
               label: "Compiler vs Interpreter",
               slug: "culture/compiler-interpreter",
+              
               badge: {
                 text: "In progress",
                 class: "badge-in-progress",
               },
+            },
+            {
+              label: "Languages paradigm",
+              slug: "culture/languages-paradigm",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
+              label: "Crédits",
+              slug: "culture/credentials",
             },
           ],
         },
