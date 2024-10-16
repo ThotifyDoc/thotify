@@ -19,3 +19,5 @@ description: Quelles sont les différences ?
 | **Event-Driven**        | JavaScript, C#, Node.js, Dart, VB.NET             |
 | **Dataflow**            | LabVIEW, TensorFlow, VHDL, Simulink               |
 |
+
+https://programmation.developpez.com/actu/253829/Programmation-une-etude-revele-les-langages-les-plus-voraces-en-energie-Perl-Python-et-Ruby-en-tete-C-Rust-et-Cplusplus-les-langages-les-plus-verts/
