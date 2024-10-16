@@ -158,9 +158,33 @@ export default defineConfig({
               },
             },
             {
+              label: "Languages performance",
+              slug: "culture/languages-performances",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
               label: "Crédits",
               slug: "culture/credentials",
             },
+          ],
+        },
+        {
+          label: "Python",
+          collapsed: true,
+          items: [
+            {
+              label: "Array Structure",
+              slug: "python/array",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            }
           ],
         },
       ],
