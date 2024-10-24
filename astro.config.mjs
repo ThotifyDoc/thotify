@@ -92,6 +92,21 @@ export default defineConfig({
           },
         },
         {
+          label: "VM",
+          collapsed: true,
+          items: [
+            {
+              label: "VM & Hyperviseurs",
+              slug: "vm-avancé/hyperviseurs",
+              
+              badge: {
+                text: "Notion avancée",
+                class: "badge-in-progress",
+              },
+            }
+          ],
+        },
+        {
           label: "Docker",
           collapsed: true,
           items: [
