@@ -75,7 +75,11 @@ export default defineConfig({
             },
             {
               label: "Commandes Linux",
-              slug: "vm-shell-linux/commands",
+              slug: "vm-shell-linux/commands-linux",
+            },
+            {
+              label: "Commandes Windows",
+              slug: "vm-shell-linux/commands-windows",
             },
             {
               label: "Hardware",
