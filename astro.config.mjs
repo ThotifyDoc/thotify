@@ -202,6 +202,57 @@ export default defineConfig({
             }
           ],
         },
+        {
+          label: "Méthodes Agiles",
+          collapsed: true,
+          items: [
+            {
+              label: "SAfe",
+              slug: "agile/safe",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
+              label: "Planification agile",
+              slug: "agile/planification-agile",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
+              label: "OKR",
+              slug: "agile/okr-objectives-key-results",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
+              label: "Portefeuilles agile",
+              slug: "agile/portefeuilles-agile",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
+              label: "Portefeuilles lean",
+              slug: "agile/portefeuilles-lean",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
       ],
     }),
   ],
