@@ -203,6 +203,21 @@ export default defineConfig({
           ],
         },
         {
+          label: "Plateform Engineering",
+          collapsed: true,
+          items: [
+            {
+              label: "Plateform Engineering",
+              slug: "plateform-engineering/plateform-engineering",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            }
+          ],
+        },
+        {
           label: "Méthodes Agiles",
           collapsed: true,
           items: [
