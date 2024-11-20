@@ -41,6 +41,22 @@ export default defineConfig({
                 class: "badge-in-progress",
               },
             },
+            {
+              label: "demo",
+              slug: "golang/demo",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
+              label: "Apprendre GO",
+              slug: "golang/golang",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
           ],
         },
         {
