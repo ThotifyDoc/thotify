@@ -3,6 +3,68 @@ layout: ../../../layouts/BaseLayout.astro
 title: A Golang Guide
 description: A guide in Golang.
 ---
+# Introduciton 
+
+Golang (GO) est un langage développé par google dans les années 2000 qui possède un gestion de la mémoire et une programmation orienté objet à sa façon.
+Ici les classes n'existent pas mais les objets restent très courant. 
+A la place go implémente un systeme de package et de structure pour manipuler le code et les objet 
+
+# Les packages
+
+Les projets GO sont initié à l'aide du fichier "main" qui représente la racine, ou le point d'entrée de l'application 
+Ce même fichier est lié a un package qui va permettre de centraliser et d'exporter les méthodes des fichiers racines. On nomme le package comme on le souhaite il n'est pas obligé de se nommer main 
+```golang
+go mod init nom-du-module
+```
+Cette commande va permettre d'init le module principal de l'application, nous n'aurons plus besoin d'utiliser cette ligne de command par la suite car tous les nouveaux module seront en fait des sous-module issu du premier module déclaré (module racine)
+
+## Les sous-package
+
+Si l'on souhaite suivre le principe of concern on va évidemment vouloir déclarer un nouveau module ou tout faire pour séparer le code de la racine, du main
+
+```
+mon-projet/
+│
+├── go.mod           # Le module principal
+├── main.go          # Le fichier principal du projet
+│
+└── services/
+    ├── go.mod       # Nouveau module pour services
+    └── service.go   # Code spécifique aux services
+
+```
+
+Dans GO, si l'on souhaite déclarer du nouveau code il faut le faire dans un nouveau dossier, GO interprétera le nouveau dossier comme un sous package du package principal 
+
+**Go ne gère pas plusieurs package racine**
+
+Depuis le package issu de /services je pourrais déclarer et exporter des func (function) vers mon module principal ou vers un autre module (attention au dépendances circulaires).
+Afin de pouvoir exporter des fonction vers d'autre module/fichier il faut que les fonction soit déclarées en **PascalCase** ainsi GO pourra interpréter automatiquement toutes les functions qui sont exportées.
+
+```GO
+func addition (a,b){ // cette fonction ne sera pas exporté 
+    return a + b
+}
+
+function Soustraction(a,b){ // cette fonction sera exportée
+    return a - b
+}
+```
+
+En partant du principe que dans le main j'importe mon sous module service, je vais utiliser la fonction Soustraction dans mon fichier main. En principe dès lors que je vais écrire service.Soustraction() go devrait me faire l'import automatiquement tel que :
+```GO
+package main
+
+import (
+	"mon-projet/services"
+
+)
+```
+# Gestion de la mémoire
+
+## Pointeurs 
+
+## Références 
 Get Started
 
 Générer les modules
