@@ -80,6 +80,19 @@ export default defineConfig({
             text: "Nouveau",
             class: "badge-new",
           },
+        },{
+          label: "C++",
+          collapsed: true,
+          items: [
+            {
+              label: "Introduction",
+              slug: "cplus/intro",
+            },
+          ],
+          badge: {
+            text: "Nouveau",
+            class: "badge-new",
+          },
         },
         {
           label: "VM, Shell et Linux",
