@@ -52,4 +52,3 @@ Les ressources statiques, comme les favicons, peuvent être placées dans le ré
   - `{ label: 'Introduction', slug: 'tests/level1/intro', badge: 'In progress' }`
 
 
-Hé salut
