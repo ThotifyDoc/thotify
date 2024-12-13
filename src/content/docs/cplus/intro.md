@@ -70,7 +70,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     }
 
     ```
-  - pour multi-fichiers :  
+  - pour multi-fichiers:  
     ```json
     {
       "version": "2.0.0",
