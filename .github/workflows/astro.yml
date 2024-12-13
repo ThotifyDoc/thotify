@@ -20,10 +20,68 @@ env:
   BUILD_PATH: "." 
 
 jobs:
-  
-   
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Build with Astro
+        run: |
+          ${{ steps.detect-package-manager.outputs.runner }} astro build \
+            --site "${{ steps.pages.outputs.origin }}" \
+            --base "${{ steps.pages.outputs.base_path }}"
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
   
   notify_pull_request_google_chat:
+    needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
       - name: Notify Google Chat
@@ -31,8 +89,8 @@ jobs:
         uses: SimonScholz/google-chat-action@main
         with:
           webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
-          title: ${{  'Déploiement réussi sur Thotify ! 🚀'  }}
-          subtitle: ${{  'Il y à eu une erreur lors de la mise en ligne..' }}
+          title: ${{ needs.build.result == 'success' && needs.deploy.result == 'success' && 'Déploiement réussi sur Thotify ! 🚀' || 'Échec du déploiement sur Thotify ❌' }}
+          subtitle: ${{ needs.build.result == 'success' && needs.deploy.result =='success' && 'Les modifications ont été fusionnées avec succès ! 😻' || 'Il y à eu une erreur lors de la mise en ligne..' }}
           additionalSections: |
             [              
               {
@@ -43,5 +101,12 @@ jobs:
                   { "decoratedText": { "text": "- Auteur : ${{ github.event.commits[1].author.username }}" } }
                 ]
               },
+              {
+                "header": "Résultats des jobs",
+                "collapsible": true,
+                "widgets": [
+                  { "decoratedText": { "text": "- Build : ${{ needs.build.result }}" } },
+                  { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } }
+                ]
+              }
             ]
-
