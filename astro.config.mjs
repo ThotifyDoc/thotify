@@ -60,6 +60,20 @@ export default defineConfig({
           ],
         },
         {
+          label: "MQTT",
+          collapsed: true,
+          items: [
+            {
+              label: "Guide",
+              slug: "mqtt/mqtt",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            }
+          ],
+        },
+        {
           label: "Minio Client",
           collapsed: true,
           items: [
