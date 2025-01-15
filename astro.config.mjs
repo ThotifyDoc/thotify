@@ -145,8 +145,8 @@ export default defineConfig({
               label: "Infos Design System",
               slug: "uxuidesign/designsystem",
               badge: {
-                text: "In progress",
-                class: "badge-in-progress",
+                text: "Nouveau",
+                class: "badge-new",
               },
             },
           ],
