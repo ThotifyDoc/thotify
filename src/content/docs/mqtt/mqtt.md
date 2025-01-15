@@ -15,8 +15,8 @@ description: Un guide pour comprendre les méchanismes dans MQTT
 
 Il est important de noter qu'un client peut s'abonner à plusieurs sujets simultanément et qu'un sujet peut avoir plusieurs abonnés. Cela permet un système de messagerie flexible et évolutif.
 
-<img src="/thotify/src/assets/mqtt/Capture d’écran de 2025-01-14 11-11-36.png" alt="mqtt official doc" title="schema interaction" style="width: 1000px;">
-<img src="/thotify/src/assets/mqtt/Capture d’écran de 2025-01-14 11-07-10.png" alt="mqtt official doc" title="schema interaction" style="width: 1000px;">
+<img src="/src/assets/mqtt/Capture d’écran de 2025-01-14 11-11-36.png" alt="mqtt official doc" title="schema interaction" style="width: 1000px;">
+<img src="/src/assets/mqtt/Capture d’écran de 2025-01-14 11-07-10.png" alt="mqtt official doc" title="schema interaction" style="width: 1000px;">
 
 ### Les deux types de jokers sont :
 
@@ -64,3 +64,97 @@ Bien que l'architecture pub/sub offre plusieurs avantages tels que la scalabilit
 
 **Real-time Constraints** : Dans certains cas, les contraintes de temps réel sont critiques et l'architecture pub/sub peut ne pas être le meilleur choix. Par exemple, une architecture requête/réponse peut être plus adaptée si une faible latence est essentielle.
 
+
+### MQTT Connection Through a NAT
+In many cases, MQTT clients live behind routers that use network address translation (NAT) to convert private network addresses (such as 192.168.x.x or 10.0.x.x) to publicfacing addresses. As mentioned, the MQTT client starts the connection by sending a CONNECT message to the broker. Since the broker has a public address and maintains the connection open to enable bidirectional sending and receiving of messages (after the initial CONNECT), MQTT clients located behind NAT routers will have no difficulties. 
+For those unaware, NAT is a common networking technology that routers use to allow devices on a private network to access the internet through a single public IP address. NAT works by translating the IP addresses of devices on the private network to the public IP address of the router and vice versa.
+
+
+
+
+
+PAGE 24
+
+<!-- FORMATION CEDALO -->
+
+What is the MQTT broker responsible for?
+The primary responsibilities of the MQTT broker include the following:
+
+Keep track of the the current state of the MQTT system, including which clients are connected, which topics are being published and subscribed to, etc. 
+Ensure that only authenticated clients have access to the MQTT system. 
+Ensure that clients can only receive data on topics where they are authorized. 
+Process all the flags (special MQTT parameters with a true or false value (1 or 0) representing some packet metadata) in the MQTT packet
+
+MQTT packet format
+The MQTT packet format consists of a:
+
+Fixed header: Made up of the packet type, packet flags, and length of the remaining packet.
+Variable header: The content and length of the variable header will vary according to the packet type and includes packet-type specific meta-data.
+Payload: The packet-type specific payload data.
+All other components are optional, apart from the fixed header, which can be broken down further into:
+
+A control field, also known as the MQTT control packet.
+A remaining length denotes the remaining length of the variable header and payload data.
+An MQTT packet needs a minimum packet size of 2 bytes (defined by the fixed header) and a maximum of 256MB.
+
+
+<img src="/src/assets/mqtt/course1_5-1.png" alt="mqtt official doc" title="schema interaction" style="width: 1000px;">
+
+
+The control field is mandatory and the first byte in each MQTT packet. It is separated into two 4-bit fields:
+
+The first 4-bits represent the packet type.
+The last four bits represent the so-called flags, which are fixed corresponding to the used packet type and cannot be changed by the client – except for the PUBLISH packet type.
+
+
+<img src="/src/assets/mqtt/course_15-2.png" alt="mqtt official doc" title="schema interaction" style="width: 1000px;">
+
+
+
+Lastly, the payload holds all user data related to the packet being sent. For a PUBLISH packet this is the actual message being sent. The message can be in any kind of format, but is most often in ASCII-encoded characters formatted as JSON, XML, or text.
+
+The three main MQTT message exange are connect subscribe publish
+
+The **CONNECT request** includes the three **must-have parameters**: 
+
+<img src="/src/assets/mqtt/image37.jpg" alt="mqtt official doc" title="schema interaction" style="width: 1000px;">
+
+**clientID** – a parameter that identifies each MQTT client connecting to the MQTT broker. If the clientID value is blank, the broker will generate a unique parameter for this client.
+
+**cleanSession** – a boolean parameter that indicates whether the client intends to establish a persistent session (a broker keeps unsent messages when the connection is interrupted) with the MQTT broker (false) or not (true). 
+
+**keepAlive** – a parameter that identifies the maximum interval in seconds to maintain the MQTT connection without any data transmission from the client.
+
+The **conversation** between the **MQTT broker** and **clients can end in two ways**:
+
+proper closure when a client sends a DISCONNECT packet unexpected closure without first sending a DISCONNECT packet
+
+
+### Glossaire:
+**CONNACK** : Abréviation de CONection + ACKnowledgment 
+exemples de code de retour CONNACK: 
+0x00 : Connexion acceptée.
+0x01 : Connexion refusée - Version du protocole incorrecte.
+0x02 : Connexion refusée - Identifiant client incorrect.
+0x03 : Connexion refusée - Serveur inaccessible.
+0x04 : Connexion refusée - Nom d'utilisateur/mot de passe incorrect.
+0x05 : Connexion refusée - Non autorisé.
+
+**SUBACK**: Subscribe back, when a subscription is accepted by the broker
+
+**OASIS** : Organization for the Advancement of Structured Information Standards. OASIS est un consortium international à but non lucratif qui développe, adopte et promeut des standards pour l'interopérabilité des systèmes d'information. Ces standards couvrent un large éventail de domaines, notamment :
+- Messagerie (comme MQTT ou AMQP),
+- Web services,
+- Sécurité,
+- Gestion de documents
+
+**retainFlag** – the value that indicates whether the message will be retained (true) or not (false). Retaining a message makes sense when a subscribed client cannot wait until the next message is published. For example, a car door sensor can be monitored in real-time without waiting. In this case, retaining a message enables new subscribers to receive the latest status of the sensor when subscribing to the topic. 
+ 
+**dupFlag** – the value that indicates whether the message duplicate was re-sent (true) or not (false).
+
+**PUBREC** - PUBlication RECieved 
+
+### Usual dev fact 
+
+Despite its name, the “Message Queue” component was never fully utilized in the protocol naming since the MQTT protocol relies on a publish and subscribe messaging pattern, where message queuing in a traditional sense is not observed. :--) 
+PS: On se croirait chez NPM 
