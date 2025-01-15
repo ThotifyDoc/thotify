@@ -123,6 +123,34 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: "ThreeJS",
+          collapsed: true,
+          items: [
+            {
+              label: "Shaders",
+              slug: "treejs/shaders",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
+        {
+          label: "UX UI Design",
+          collapsed: true,
+          items: [
+            {
+              label: "Infos Design System",
+              slug: "uxuidesign/designsystem",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
       ],
     }),
   ],
