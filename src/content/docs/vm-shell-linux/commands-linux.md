@@ -4,6 +4,9 @@ title: Memento et commandes de base LINUX en SHELL
 description: Guide pour les commandes de bases demandées en Prépa pour la semaine d'introduction au Shell et à Linux
 ---
 
+Commandes de base Debian :  
+https://fr.wikipedia.org/wiki/Commande_Debian
+
 ##### **Afficher le manuel d'une commande (exemple ici la commande "ls")** :
 
 ```bash

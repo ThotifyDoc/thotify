@@ -118,7 +118,11 @@ export default defineConfig({
             },
             {
               label: "Commandes Linux",
-              slug: "vm-shell-linux/commands",
+              slug: "vm-shell-linux/commands-linux",
+            },
+            {
+              label: "Commandes Windows",
+              slug: "vm-shell-linux/commands-windows",
             },
             {
               label: "Hardware",
@@ -307,6 +311,34 @@ export default defineConfig({
               badge: {
                 text: "In progress",
                 class: "badge-in-progress",
+              },
+            },
+          ],
+        },
+        {
+          label: "ThreeJS",
+          collapsed: true,
+          items: [
+            {
+              label: "Shaders",
+              slug: "treejs/shaders",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
+        {
+          label: "UX UI Design",
+          collapsed: true,
+          items: [
+            {
+              label: "Infos Design System",
+              slug: "uxuidesign/designsystem",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
               },
             },
           ],
