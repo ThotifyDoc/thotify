@@ -17,6 +17,7 @@ Avant de commencer, assure-toi d'avoir ces outils installés :
 - **[MinGW64](https://packages.msys2.org/packages/mingw-w64-x86_64-gcc)** (version : mingw-w64-x86_64-gcc Version: 14.2.0-2) *(avoir **MYSYS** installé aide)*
 - Télécharger le **code source d'OpenCV** (dans sa version ZIP) ici :  
   👉 [Github - OpenCV Release - Version 4.11.0](https://github.com/opencv/opencv/releases/tag/4.11.0)
+- **Extraire** le dossier dans le disque **C:** de préférence
 
 ### Étapes de l'installation 🚀
 
@@ -30,7 +31,7 @@ pacman -S mingw-w64-x86_64-cmake
 Crée un dossier build dans le dossier extrait du ZIP d'OpenCV
 Navigue dans ce dossier build :
 ```bash
-cd /chemin/vers/le/dossier/build
+cd C:\opencv-4.11.0\build
 ```
 #### 3. Configurer le projet avec CMake
 Dans le dossier build, lance la commande suivante pour préparer le projet pour MinGW64 :
@@ -50,4 +51,8 @@ Une fois la compilation terminée, tu es presque à la fin ! Installe OpenCV ave
 ```bash
 mingw32-make install
 ```
+#### 6. Ajouter le dossier de dll au path 
+Ajoute le chemin suivant dans tes variables d'environnement : 
+- **C:\opencv-4.11.0\build\install\x64\mingw\bin**
+
 🎉 Et voilà, tu as maintenant ta propre version d'OpenCV prête à être utilisée dans tes projets C++ !
