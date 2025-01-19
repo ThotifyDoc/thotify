@@ -4,8 +4,8 @@ title: OpenCV Guide for C++ and MinGW64
 description: A fun and easy guide to setting up OpenCV with C++ and MinGW64.
 ---
 
-# 🎬 Créer ta propre version d'OpenCV !
-
+# 🎬 Ta propre version d'OpenCV !
+---
 ## Pourquoi le faire ?
 Les soucis de versions sous Windows peuvent vraiment devenir un casse-tête. Pourquoi ne pas prendre le contrôle et créer ta propre version d'OpenCV ? Cela pourrait résoudre ces problèmes et te donner plus de flexibilité dans tes projets !
 
