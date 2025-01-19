@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/BaseLayout.astro
-title: A C++ Guide
+title: A C++ Guide with MinGW64
 description: A guide in C++.
 ---
 
