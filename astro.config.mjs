@@ -101,6 +101,9 @@ export default defineConfig({
             {
               label: "Introduction",
               slug: "cplus/intro",
+            },{
+              label: "OpenCV",
+              slug: "cplus/opencv",
             },
           ],
           badge: {
