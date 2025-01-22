@@ -3,7 +3,7 @@ layout: ../../../layouts/BaseLayout.astro
 title: OpenCV Guide for C++ and MinGW64
 description: A fun and easy guide to setting up OpenCV with C++ and MinGW64.
 ---
-
+# Sur Windows
 # 🎬 Ta propre version d'OpenCV !
 ---
 ## Pourquoi le faire ?
@@ -56,3 +56,30 @@ Ajoute le chemin suivant dans tes variables d'environnement :
 - **C:\opencv-4.11.0\build\install\x64\mingw\bin**
 
 🎉 Et voilà, tu as maintenant ta propre version d'OpenCV prête à être utilisée dans tes projets C++ !
+
+
+
+# Sur Ubuntu
+
+## Téléchargement de l'hyperviseur
+- Virtual Box : https://www.virtualbox.org/wiki/Downloads
+
+## Téléchargement de l'ISO
+- Dernière version : https://ubuntu.com/download/desktop
+
+## Installation de l'ISO
+- https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview
+
+## Installation de VSCode
+- sudo apt-get install wget gpg
+
+## Installation de CMake
+- sudo apt-get -y install cmake
+
+## Installation d'un compilateur C++
+- sudo apt update && sudo apt install build-essential
+
+## Installation d'OpenCV
+- sudo apt update && sudo apt upgrade
+- sudo apt install libopencv-dev python3-opencv
+- dpkg -l libopencv-dev
