@@ -71,15 +71,23 @@ Ajoute le chemin suivant dans tes variables d'environnement :
 - https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview
 
 ## Installation de VSCode
-- sudo apt-get install wget gpg
+```bash
+sudo apt-get install wget gpg
+```
 
 ## Installation de CMake
-- sudo apt-get -y install cmake
+```bash
+  sudo apt-get -y install cmake
+```
 
 ## Installation d'un compilateur C++
-- sudo apt update && sudo apt install build-essential
+``` bash
+sudo apt update && sudo apt install build-essential
+```
 
 ## Installation d'OpenCV
-- sudo apt update && sudo apt upgrade
-- sudo apt install libopencv-dev python3-opencv
-- dpkg -l libopencv-dev
+```bash
+  sudo apt update && sudo apt upgrade
+  sudo apt install libopencv-dev python3-opencv
+  dpkg -l libopencv-dev
+```
