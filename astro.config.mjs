@@ -94,6 +94,22 @@ export default defineConfig({
             text: "Nouveau",
             class: "badge-new",
           },
+        },{
+          label: "C++",
+          collapsed: true,
+          items: [
+            {
+              label: "Introduction",
+              slug: "cplus/intro",
+            },{
+              label: "OpenCV",
+              slug: "cplus/opencv",
+            },
+          ],
+          badge: {
+            text: "Nouveau",
+            class: "badge-new",
+          },
         },
         {
           label: "VM, Shell et Linux",
@@ -105,7 +121,11 @@ export default defineConfig({
             },
             {
               label: "Commandes Linux",
-              slug: "vm-shell-linux/commands",
+              slug: "vm-shell-linux/commands-linux",
+            },
+            {
+              label: "Commandes Windows",
+              slug: "vm-shell-linux/commands-windows",
             },
             {
               label: "Hardware",
@@ -299,20 +319,47 @@ export default defineConfig({
           ],
         },
         {
+          label: "ThreeJS",
+          collapsed: true,
+          items: [
+            {
+              label: "Shaders",
+              slug: "treejs/shaders",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
+        {
+          label: "UX UI Design",
+          collapsed: true,
+          items: [
+            {
+              label: "Infos Design System",
+              slug: "uxuidesign/designsystem",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            },
+          ],
+        },
+        {
           label: "ClickJS",
           collapsed: true,
           items: [
             {
               label: "Getting started",
               slug: "clicker/getting-started",
-              
               badge: {
-                text: "In progress",
-                class: "badge-in-progress",
+                text: "Nouveau",
+                class: "badge-new",
               },
             }
-          ],
-        },
+          ]
+        }
       ],
     }),
   ],

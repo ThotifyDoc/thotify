@@ -50,3 +50,5 @@ Les ressources statiques, comme les favicons, peuvent être placées dans le ré
 
 - Quand tu va ajouter de nouveaux tutos, n'oublie pas d'utiliser **les badges** dans le fichier astro.config.mjs exemple :
   - `{ label: 'Introduction', slug: 'tests/level1/intro', badge: 'In progress' }`
+
+
