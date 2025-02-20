@@ -298,6 +298,21 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: "ClickJS",
+          collapsed: true,
+          items: [
+            {
+              label: "Getting started",
+              slug: "clicker/getting-started",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            }
+          ],
+        },
       ],
     }),
   ],
