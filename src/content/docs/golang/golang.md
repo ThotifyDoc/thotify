@@ -66,6 +66,51 @@ import (
 ![Thread Goroutine & autre](https://miro.medium.com/v2/resize:fit:1400/1*OPe9r5Goz5_aUW-9OgY5Iw.png)
 
 ## Go routine 
+
+syntaxe exemple: 
+```go
+    go fmt.printLn("goroutine") 
+    // utilise un "thread de 1ko" pour executer des fonctions en parallele 
+
+```
+### Channel 
+syntaxe exemple: 
+```go
+    package main
+
+import (
+	"fmt"
+	"time"
+)
+
+// Fonction qui envoie des messages dans un channel
+func sendMessages(ch chan string) {
+	for i := 1; i <= 5; i++ {
+		message := fmt.Sprintf("Message %d", i)
+		fmt.Println("📤 Envoi:", message)
+		ch <- message // Envoi du message dans le channel
+		time.Sleep(1 * time.Second)
+	}
+	close(ch) // Ferme le channel après l'envoi des messages
+}
+
+func main() {
+	// Création d'un channel de type string
+	ch := make(chan string)
+
+	// Lancer une goroutine pour envoyer des messages
+	go sendMessages(ch)
+
+	// Lire les messages envoyés par la goroutine
+	for msg := range ch {
+		fmt.Println("📩 Reçu:", msg)
+	}
+
+	fmt.Println("✅ Fin du programme")
+}
+
+```
+
 Golang est un langage qui utilise le multi-threading et le [multiplexage](#multiplexage).
 
 
