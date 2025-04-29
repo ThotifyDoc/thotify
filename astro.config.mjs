@@ -359,6 +359,20 @@ export default defineConfig({
               },
             }
           ]
+        },
+        {
+          label: "UML",
+          collapsed: true,
+          items: [
+            {
+              label: "Getting started",
+              slug: "uml/guide",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
         }
       ],
     }),
