@@ -373,6 +373,20 @@ export default defineConfig({
               },
             }
           ]
+        },
+        {
+          label: "Nginx",
+          collapsed: true,
+          items: [
+            {
+              label: "Guide",
+              slug: "nginx/guide",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
         }
       ],
     }),
