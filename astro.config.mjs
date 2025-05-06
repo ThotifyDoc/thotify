@@ -387,6 +387,20 @@ export default defineConfig({
               },
             }
           ]
+        },
+        {
+          label: "Unix-Linux",
+          collapsed: true,
+          items: [
+            {
+              label: "Guide",
+              slug: "unix-linux/guide",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
         }
       ],
     }),
