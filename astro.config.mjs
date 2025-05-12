@@ -252,12 +252,12 @@ export default defineConfig({
             }
           ],
         },{
-          label: "JAVA SpringBoot ",
+          label: "JAVA",
           collapsed: true,
           items: [
             {
-              label: "Get started",
-              slug: "java/intro",
+              label: "SpringBoot - Get started",
+              slug: "java/get_started_spring",
               
               badge: {
                 text: "In progress",
