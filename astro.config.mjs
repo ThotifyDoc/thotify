@@ -230,6 +230,20 @@ export default defineConfig({
               },
             }
           ],
+        },{
+          label: "JAVA SpringBoot ",
+          collapsed: true,
+          items: [
+            {
+              label: "Get started",
+              slug: "java/intro",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            }
+          ],
         },
         {
           label: "Plateform Engineering",
