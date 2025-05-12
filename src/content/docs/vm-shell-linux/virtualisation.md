@@ -22,7 +22,7 @@ description: Guide pour l'installation de machines virtuelles
 ##### **Connaitre sa machine**
 
 Il est necessaire de connaitre son matériel pour savoir comment alouer les différentes ressources à votre VM.
-Pour exemple la capacité de son disque dur, sa RAM ou le nombre de coeur de son CPU (Gestionnaire des tâche, onglet "performance")
+Pour exemple la capacité de son disque dur, sa RAM ou le nombre de coeur de son CPU (**Gestionnaire des tâche, onglet "performance"**)
 <img src="/thotify/src/assets/img-virtualisation/cpu.jpg" alt="Exemple performance CPU" title="Performance CPUs" style="width: 600px;">
 
 ##### **Procédure de création d'une VM** :
@@ -42,4 +42,17 @@ Pour exemple la capacité de son disque dur, sa RAM ou le nombre de coeur de son
     - Host-only : Pas d'accès internet, la VM crée un reseau privé entre l'ordi et la VM
     - Custom : Choix d'un réseau virtuel spécifique.
     - LAN segment : VM complètement isolée
-- test
+
+##### **Le BIOS dans une VM sans OS** :
+
+Exemple de BIOS dans une VM sans OS (Pour y accéder, focus sur la VM + F2 sur PC).
+Attention, vous allez également perdre l'usage de la souris ou du PAD puisque c'est comme si rien n'étaiet installé sur un ordi vierge. **Pour sortir du focus VM et retrouver la souris : CTRL + ALT**
+
+<img src="/thotify/src/assets/img-virtualisation/bios-bootmanager.jpg" alt="Exemple BIOS" title="Droits utilisateurs" style="width: 500px;">
+
+Dans le BIOS de VMware lorsque vous utilisez l'interface EFI (Extensible Firmware Interface), les différents menus que vous voyez représentent différentes options de démarrage pour la machine virtuelle :
+
+- EFI VMWare Virtual namespace NSID 1 (DD virtuel avec le namespace ID 1)
+- EFI VMware Virtual SATA CD ROM Drive (lescteur CD Virtuel servant par exemple à installer un OS via une image ISO)
+- EFI Network (Dans les milieux pro pour récupérer une config reseau existante)
+- EFI Internal shell (terminal intégré)

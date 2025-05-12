@@ -60,6 +60,20 @@ export default defineConfig({
           ],
         },
         {
+          label: "MQTT",
+          collapsed: true,
+          items: [
+            {
+              label: "Guide",
+              slug: "mqtt/mqtt",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            }
+          ],
+        },
+        {
           label: "Minio Client",
           collapsed: true,
           items: [
@@ -87,6 +101,9 @@ export default defineConfig({
             {
               label: "Introduction",
               slug: "cplus/intro",
+            },{
+              label: "OpenCV",
+              slug: "cplus/opencv",
             },
           ],
           badge: {
@@ -104,7 +121,11 @@ export default defineConfig({
             },
             {
               label: "Commandes Linux",
-              slug: "vm-shell-linux/commands",
+              slug: "vm-shell-linux/commands-linux",
+            },
+            {
+              label: "Commandes Windows",
+              slug: "vm-shell-linux/commands-windows",
             },
             {
               label: "Hardware",
@@ -311,6 +332,90 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: "ThreeJS",
+          collapsed: true,
+          items: [
+            {
+              label: "Shaders",
+              slug: "treejs/shaders",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+          ],
+        },
+        {
+          label: "UX UI Design",
+          collapsed: true,
+          items: [
+            {
+              label: "Infos Design System",
+              slug: "uxuidesign/designsystem",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            },
+          ],
+        },
+        {
+          label: "ClickJS",
+          collapsed: true,
+          items: [
+            {
+              label: "Getting started",
+              slug: "clicker/getting-started",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
+        },
+        {
+          label: "UML",
+          collapsed: true,
+          items: [
+            {
+              label: "Getting started",
+              slug: "uml/guide",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
+        },
+        {
+          label: "Nginx",
+          collapsed: true,
+          items: [
+            {
+              label: "Guide",
+              slug: "nginx/guide",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
+        },
+        {
+          label: "Unix-Linux",
+          collapsed: true,
+          items: [
+            {
+              label: "Guide",
+              slug: "unix-linux/guide",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
+        }
       ],
     }),
   ],
