@@ -35,12 +35,12 @@ Ici on a besoin de configurer WAMP.
 
 Trouver les bonnes images **officielles** est essentiel pour ne pas devoir configurer tout un pant de la technologie que vous souhaitez utiliser. Vous serez à l'abri des surprises et des failles de sécurité dans la plupart des scénarios que vous rencontrerez.
 
-![dockerhub search](/public/docker_guide/dockerhub_search.png)
+![dockerhub search](/thotify/docker_guide/dockerhub_search.png)
 
 Il existe une deuxieme façon sécurisée de rechercher des images et ça va nous aider à construire nos conteneurs. 
 Dans chaque **image officiel** existe des sous images qui sont des **configurations personnalisées** pour des environnement spécifiques
-![dockerhub tags](/public/docker_guide/tags.png) 
-![dockerhub recent tags](/public/docker_guide/dockerhub_tags.png)
+![dockerhub tags](/thotify/docker_guide/tags.png) 
+![dockerhub recent tags](/thotify/docker_guide/dockerhub_tags.png)
 
 ## Les tags
 
@@ -90,7 +90,7 @@ Problème, cette configuration est incomplète et ne nous permettra pas de nous 
 
 ## Variable d'environnement pour l'image
 
-![variables pour mysql](/thotify/public/docker_guide/mysql_read.png)
+![variables pour mysql](/thotify/docker_guide/mysql_read.png)
 
 Si je lis attentivement la documentation sur dockerhub de mysql notamment sur le chapitre des "Environment variables" je m'aperçois qu'il y a une variable d'environnement, celle présenté dans l'exemple plus haut
 
@@ -505,3 +505,13 @@ Ce qui nous donne
     db-data:
 
 Quand vous accéderez a PhpMyAdmin pensez a bien mettre mysql en nom de serveur puis vos crédentials et vous pourrez vérifier facilement si votre BDD a bien été monté au démarrage.
+
+Pour aller plus loin, recherchez les commandes de bases, lisez les défintions sur la documentation officielle sur les divers concepts mal compris comme: 
+
+- Dockerfile
+- Docker compose
+- Volumes
+- Networks
+- Logging
+- Config serveur (apache2, nginx) 
+- Dockerhub
