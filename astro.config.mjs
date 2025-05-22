@@ -166,8 +166,17 @@ export default defineConfig({
               badge: {
                 text: "In progress",
                 class: "badge-in-progress",
+              }
+            },
+            {
+              label: "Guide complet",
+              slug: "docker/guide-wamp",
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
               },
             },
+            
           ],
         },
         {
