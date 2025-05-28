@@ -253,9 +253,22 @@ export default defineConfig({
           ],
         },{
           label: "JAVA",
+          badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
           collapsed: true,
           items: [
+            
             {
+              label: "Vanilla - Get started",
+              slug: "java/get_started",
+              
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            },{
               label: "SpringBoot - Get started",
               slug: "java/get_started_spring",
               
@@ -264,6 +277,7 @@ export default defineConfig({
                 class: "badge-in-progress",
               },
             }
+            
           ],
         },
         {

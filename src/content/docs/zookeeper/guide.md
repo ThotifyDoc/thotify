@@ -40,3 +40,5 @@ To deal with these problems, the system must be able to reliably elect a new mas
 ### Glossary 
 
 **Masterlock**: Le master lock (verrou maître) est utilisé pour contrôler l'accès exclusif à une ressource dans Zookeeper
+
+- ⚠️ en 2025 **Zookeeper** à été remplacé par **Kraft**
