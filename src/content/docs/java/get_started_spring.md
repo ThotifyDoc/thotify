@@ -3,14 +3,14 @@ layout: ../../../layouts/BaseLayout.astro
 title: A JAVA SpringBoot Guide
 description: A guide in JAVA Springboot
 ---
-<img src="/thotify/src/assets/logos_officials/spring_boot.png" alt="JAVA springboot official logo " title="Cycle de vie DS" style="width: 350px;">
-
+<img src="/thotify/logos_officials/spring_boot.png" alt="JAVA springboot official logo " title="Cycle de vie DS" style="width: 350px;">
+/thotify/docker_guide/dockerhub_search.png
 # Installer Java (17) & Maven(3.9)
 - [Java 17 download](https://www.oracle.com/fr/java/technologies/downloads/#java17)
 - [Apache Maven](https://maven.apache.org/download.cgi)
   - **Dézipper** le fichier dans **C:\Program Files\apache-maven**
   - **Gardez** le chemin qui mène au dossier **bin** pour l'ajouter à la **variable d'environnement PATH**
-  - Ouvrir un nouveau terminal et tapez 
+  - Ouvrir un nouveau terminal et tapez &
   ```bash
    mvn --version
    ```
