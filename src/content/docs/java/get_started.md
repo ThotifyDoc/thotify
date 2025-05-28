@@ -3,7 +3,7 @@ layout: ../../../layouts/BaseLayout.astro
 title: JAVA Get Started
 description: A guide in JAVA
 ---
-<img src="/thotify/src/assets/logos_officials/java.png" alt="JAVA official logo " title="Cycle de vie DS" style="width: 300px;">
+<img src="/thotify/logos_officials/java.png" alt="JAVA official logo " title="Cycle de vie DS" style="width: 300px;">
 
 
 ## 📦 Prérequis
