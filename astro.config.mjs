@@ -437,6 +437,28 @@ export default defineConfig({
               },
             }
           ]
+        },
+        {
+          label: "ANSSI DPO",
+          collapsed: true,
+          items: [
+            {
+              label: "Module 3",
+              slug: "anssi-dpo/mooc-anssi",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            },
+            {
+              label: "Anecdotes CyberSécurité",
+              slug: "anssi-dpo/anecdotes-cybersecu",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ]
         }
       ],
     }),
