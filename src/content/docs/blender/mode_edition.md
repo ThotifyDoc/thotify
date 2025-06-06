@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/BaseLayout.astro
-title: A Blinder Guide
-description: A guide for Blinder
+title: A Blender Guide
+description: A guide for Blender
 ---
 
 # Blender - Présentation du Mode Édition
