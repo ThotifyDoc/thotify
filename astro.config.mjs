@@ -72,6 +72,19 @@ export default defineConfig({
               },
             }
           ],
+        },{
+          label: "Blender",
+          collapsed: true,
+          items: [
+            {
+              label: "Mode édition",
+              slug: "blender/mode_edition",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            }
+          ],
         },
         {
           label: "Minio Client",
