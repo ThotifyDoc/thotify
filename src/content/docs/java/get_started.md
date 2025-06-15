@@ -10,8 +10,10 @@ description: A guide in JAVA
 
 Assurez-vous d’avoir les outils suivants installés :
 
-- [Java JDK 17+](https://adoptium.net/)
-- [Maven](https://maven.apache.org/) (ou Gradle si tu préfères)
+- <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">Java JDK 17+</a>
+- <a href="https://maven.apache.org/" target="_blank">Maven</a>
+
+- (ou Gradle si tu préfères)
 
 ---
 
@@ -72,15 +74,17 @@ src/
                 └── MainTest.java
 ```
 ### 🐿️ Tips & astuces
-Ajouter des flags à java pour l'affichage des logs ou du debugging :
-```bash
-java -Ddebug=true -cp ...
-```
+- Ajouter des flags à java pour l'affichage des logs ou du debugging :
+    ```bash
+    java -Ddebug=true -cp ...
+    ```
+- Dans **VS Code**, il suffit de faire un **clic droit** sur **le fichier principal** puis de sélectionner **"Run Java"** pour **compiler** et **exécuter** automatiquement le programme.
+
 
 ### 💡Extensions 
 
 Dans le Marketplace VsCode :
 
-- ✅ [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-- ✅ [Language Support for Java(TM) by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java)
-- ✅ [Debugger for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)
+- ✅  <a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack" target="_blank">Extension Pack for Java</a> 
+- ✅  <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java" target="_blank">Language Support for Java(TM) by Red Hat</a> 
+- ✅  <a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug" target="_blank">Debugger for Java</a> 
