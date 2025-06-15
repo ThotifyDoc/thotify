@@ -1,32 +1,23 @@
-# Sample workflow for building and deploying an Astro site to GitHub Pages
-#
-# To get started with Astro see: https://docs.astro.build/en/getting-started/
-#
+
 name: Deploy Astro site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    
 permissions:
   contents: read
   pages: write
   id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+  
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 env:
-  BUILD_PATH: "." # default value when not using subfolders
-  # BUILD_PATH: subfolder
+  BUILD_PATH: "." 
 
 jobs:
   build:
@@ -88,3 +79,34 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+  
+  notify_pull_request_google_chat:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Google Chat
+        if: ${{ always() }} # Utilisez 'always' pour vous assurer que la notification est envoyée même en cas d'échec des étapes précédentes
+        uses: SimonScholz/google-chat-action@main
+        with:
+          webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
+          title: ${{ needs.build.result == 'success' && needs.deploy.result == 'success' && 'Déploiement réussi sur Thotify ! 🚀' || 'Échec du déploiement sur Thotify ❌' }}
+          subtitle: ${{ needs.build.result == 'success' && needs.deploy.result =='success' && 'Les modifications ont été fusionnées avec succès ! 😻' || 'Il y à eu une erreur lors de la mise en ligne..' }}
+          additionalSections: |
+            [              
+              {
+                "header": "Détails de la fusion",
+                "collapsible": true,
+                "widgets": [
+                  { "decoratedText": { "text": "- Titre du commit  : ${{github.event.commits[0].message}}" } },
+                  { "decoratedText": { "text": "- Auteur : ${{ github.event.commits[1].author.username }}" } }
+                ]
+              },
+              {
+                "header": "Résultats des jobs",
+                "collapsible": true,
+                "widgets": [
+                  { "decoratedText": { "text": "- Build : ${{ needs.build.result }}" } },
+                  { "decoratedText": { "text": "- Deployment : ${{ needs.deploy.result }}" } }
+                ]
+              }
+            ]

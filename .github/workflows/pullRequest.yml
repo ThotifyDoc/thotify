@@ -1,0 +1,20 @@
+name: Notify pull request on Google Chat 
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  notify_pull_request_google_chat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Google Chat
+        if: github.event.pull_request.user.login != 'mangozmorgan' && github.event.pull_request.user.login != 'joris-verguldezoone'
+        uses: SimonScholz/google-chat-action@main
+        with:
+          webhookUrl: ${{ secrets.GOOGLE_CHAT_URL }}
+          title: Un pull request sur Thotify  ${{ secrets.GOOGLE_CHAT_URL }}! 
+          subtitle: Hey Admins! You have to merge a new Pull Request  ! 🪄
+
+          

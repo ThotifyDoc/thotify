@@ -1,6 +1,7 @@
 ---
-const { children } = Astro.props;
+import SidebarDynamic from '../components/SidebarDynamic.astro';
 ---
+<SidebarDynamic></SidebarDynamic>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +24,8 @@ const { children } = Astro.props;
   <div id="content-container">
     <slot></slot>
   </div>
-  <script src="/thotify/sidebar-dynamic.js" type="module"></script>
-  <script src="/src/scripts/checkAuth.js" type="module"></script>
+  <!-- <script is:inline src="/thotify/scripts/sidebar-dynamic.js" type="module"></script>
+  <script is:inline src="/src/scripts/checkAuth.js" type="module"></script> -->
 
 </body>
 </html>

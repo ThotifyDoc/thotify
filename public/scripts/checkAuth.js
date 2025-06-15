@@ -1,5 +1,5 @@
 // checkAuth.js
-import { isUserLoggedIn } from './firebase.js';
+import { isUserLoggedIn } from '../scripts/firebase.js';
 
 isUserLoggedIn().then((isLoggedIn) => {
     
