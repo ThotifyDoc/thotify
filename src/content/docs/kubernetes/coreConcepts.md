@@ -5,7 +5,7 @@ description: Initialiser k8s
 ---
 
 # Introduction
-Over 75% of projects in the CNCF are written in Go. Kubernetes, Terraform, Docker, Helm, Istio, and many other CNCF tools are written in Go.
+Plus de 75 % des projets de la CNCF sont écrits en Go. Kubernetes, Terraform, Docker, Helm, Istio, et de nombreux autres outils de la CNCF sont développés en Go.
 
 Kubernetes (K8s) est une plateforme open-source développée par Google (et maintenant maintenue par la CNCF) qui permet de **déployer, gérer et mettre à l’échelle automatiquement** des conteneurs (comme Docker) de façon déclarative.
 
@@ -30,6 +30,23 @@ Quelques chiffres intéressants :
 
 # Architecture
 
+## Serveurs et agents
+
+Un nœud de serveur est défini comme un hôte exécutant la k3s servercommande, avec des composants de plan de contrôle et de banque de données gérés par K3s.
+Un nœud d'agent est défini comme un hôte exécutant la k3s agentcommande, sans aucun composant de banque de données ou de plan de contrôle.
+Les serveurs et les agents exécutent le kubelet, l'environnement d'exécution du conteneur et le CNI. Consultez la documentation sur les options avancées pour plus d'informations sur l'exécution de serveurs sans agent.
+
+[Illustration entre serveur et agent](/thotitfy/k8s_&_devops/how-it-works-k3s-revised-9c025ef482404bca2e53a89a0ba7a3c5.svg)
+
+## Cas concret de la doc 
+Les nœuds d'agent sont enregistrés avec une connexion WebSocket initiée par le k3s agentprocessus, et cette connexion est maintenue par un équilibreur de charge côté client, exécuté dans le cadre du processus d'agent. Initialement, l'agent se connecte au superviseur (et à kube-apiserver) via l'équilibreur de charge local sur le port 6443. L'équilibreur de charge gère une liste de points de terminaison disponibles. Le point de terminaison par défaut (initialement unique) est initialisé par le nom d'hôte de l' --serveradresse. Une fois connecté au cluster, l'agent récupère une liste d'adresses kube-apiserver à partir de la liste des points de terminaison du service Kubernetes dans l'espace de noms par défaut. Ces points de terminaison sont ajoutés à l'équilibreur de charge, qui maintient ensuite des connexions stables à tous les serveurs du cluster, fournissant ainsi une connexion à kube-apiserver qui tolère les pannes de serveurs individuels.
+
+Les agents s'enregistreront auprès du serveur à l'aide du secret du cluster de nœuds, ainsi que d'un mot de passe généré aléatoirement pour le nœud, stocké dans /etc/rancher/node/password. Le serveur stockera les mots de passe des nœuds individuels sous forme de secrets Kubernetes, et toute tentative ultérieure devra utiliser le même mot de passe. Les secrets des mots de passe des nœuds sont stockés dans l' kube-systemespace de noms, avec des noms utilisant le modèle <host>.node-password.k3s. Ceci permet de protéger l'intégrité des identifiants de nœuds.
+
+Si le /etc/rancher/noderépertoire d'un agent est supprimé ou si vous souhaitez rejoindre un nœud sous un nom existant, supprimez-le du cluster. Cela effacera l'ancienne entrée du nœud et son mot de passe secret, et permettra au nœud de rejoindre le cluster.
+
+Si vous réutilisez fréquemment des noms d'hôtes, mais que vous ne parvenez pas à supprimer les mots de passe secrets des nœuds, un identifiant de nœud unique peut être automatiquement ajouté au nom d'hôte en lançant les serveurs ou agents K3s à l'aide de l' --with-node-idoption. Lorsque cette option est activée, l'identifiant de nœud est également stocké dans /etc/rancher/node/.
+
 ## Control Panel 
 Ainsi, lorsque vous utilisez kubectl pour gérer le cluster, en back-end, vous communiquez avec le serveur d'API via des API REST HTTP . Cependant, les composants internes du cluster, comme le planificateur, le contrôleur, etc., communiquent avec le serveur d'API via gRPC .
 
@@ -41,7 +58,7 @@ La communication entre le serveur API et les autres composants du cluster s'effe
 etcd
 Kubernetes est un système distribué et nécessite une base de données distribuée performante, telle qu'etcd, qui prend en charge sa nature distribuée. Elle agit à la fois comme un service back-end de découverte et comme une base de données. On peut la qualifier de cerveau du cluster Kubernetes.
 
-## Kubelet
+## Kubelet (agent)
 Mini orchestrateur qui ne gère pas le runtime
 Kubelet est un composant agent qui **s'exécute sur chaque nœud du cluster**. Il ne s'exécute pas en tant que conteneur mais plutôt en tant que **démon**, géré par **systemd**.
 
@@ -88,12 +105,17 @@ Les **namespaces** permettent d’isoler les ressources dans un cluster K8s.
 
 ---
 
+## ClusterIP
+
+ClusterIP est le type par défaut des Services. Il expose un Pod à l’intérieur du cluster uniquement (pas à l’extérieur).
+Très utilisé pour la communication interservices, même si on ne le voit pas toujours directement.
+
 ## Objets principaux
 
 | Objet         | Rôle                                                                 |
 |---------------|----------------------------------------------------------------------|
 | **Pod**       | Unité d'exécution contenant un ou plusieurs conteneurs.              |
-| **Deployment**| Crée et gère des pods réplicables (ex: frontend, API, workers).      |
+| **Deployment**| Crée et gère des pods réplicables (ex: frontend, API, workers), permet de configurer les replicaSet (on les configure tjrs les replica, jamais les replicaSet).      |
 | **DaemonSet** | 1 pod par nœud (ex: monitoring, agent de log).                       |
 | **CronJob**   | Lance un pod à intervalle régulier (tâches planifiées).              |
 | **StatefulSet**| Gère des pods avec identité stable (ex: base de données).           |
@@ -116,6 +138,12 @@ Les **namespaces** permettent d’isoler les ressources dans un cluster K8s.
 
 ---
 
+## ConfigMap et Secret
+
+ConfigMap pour des données non sensibles,
+Secret pour des données sensibles (chiffrées en base64, pas vraiment "sécurisées" au repos mais mieux que rien).
+
+
 ## LoadBalancer
 
 Fonctionnement (en environnement Cloud) :
@@ -133,6 +161,9 @@ Fonctionnement (en environnement Cloud) :
 ---
 
 ## Ingress (et pourquoi le préférer)
+
+Ingress = Objet Kubernetes
+Ingress Controller = Pod qui implémente cet objet (ex : nginx, traefik)
 
 | Option        | ✅ Avantages                          | ❌ Inconvénients                                     |
 |---------------|--------------------------------------|-----------------------------------------------------|
@@ -193,10 +224,84 @@ Et ainsi de suite : quorum = (N / 2) + 1
 | Base de données répliquée | Assurer que la majorité a bien reçu les écritures          |
 | Élection de leader        | Décider qui prend le contrôle sans conflit                 |
 
+## RBAC Authorization
+
+L'autorisation RBAC utilise lerbac.authorization.k8s.io Groupe APIpour piloter les décisions d'autorisation, vous permettant de configurer dynamiquement les politiques via l'API Kubernetes.
+
+Pour activer RBAC, démarrez leserveur API avec l' --authorization-configindicateur défini sur un fichier qui inclut l' RBACautorisateur ; par exemple :
+
+manifest example: 
+
+  apiVersion: apiserver.config.k8s.io/v1
+  kind: AuthorizationConfiguration
+  authorizers:
+    ...
+    - type: RBAC
+    ...
+
+L'API RBAC déclare quatre types d'objets Kubernetes : Role , ClusterRole , RoleBinding et ClusterRoleBinding . Vous pouvez décrire ou modifier le RBAC. objets en utilisant des outils tels que kubectl, comme tout autre objet Kubernetes.
+
+![Voir doc pour en apprendre plus sur: Role, ClusterRole, RoleBinding et ClusterRoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+
+## Other orchestrator 
+
+### Nomad 
+
+[guide](https://blog.cloudflare.com/how-we-use-hashicorp-nomad/?ref=devopscube.com/)
+[Illustration](/thotify/k8s_&_devops/image3.png)
 
 
+## Tools
+
+## For Dev Environment
+
+1. Vagrant  
+2. Docker Desktop  
+3. Minikube (k8s)  
+4. Minishift (k8s)  
+5. Kind (k8s)  
+
+## For Infrastructure Provisioning
+
+1. Terraform (preferable)  
+2. CloudFormation for AWS  
+3. CLIs (of respective cloud provider)  
+4. Pulumi  
+
+## For Configuration Management
+
+1. Ansible (preferable)  
+2. Chef  
+3. Puppet  
+4. Saltstack  
+
+## VM Image / Container Management
+
+1. HashiCorp Packer  
+2. Docker  
 
 
+### Helm
+
+Helm est un gestionnaire de configuration et de paquets pour Kubernetes.
+Il permet de déployer facilement des applications complexes sur un cluster Kubernetes à l’aide de Helm Charts (graphes de déploiement).
+
+Il offre de puissantes fonctionnalités de templating, prenant en charge la génération de templates pour tous les objets Kubernetes :
+Deployments, Pods, Services, ConfigMaps, Secrets, RBAC, PSP, etc.
+
+### Kustomize 
+Kustomize repose sur deux concepts clés : Base et Overlays.
+
+Avec Kustomize, on peut réutiliser des fichiers de base (fichiers YAML communs) pour tous les environnements, et y appliquer des overlays (patchs) spécifiques à chaque environnement.
+
+Le processus de overlaying consiste à créer une version personnalisée d’un manifest, en combinant :
+
+manifest de base + manifest overlay = manifest personnalisé
+
+Toutes les spécifications de personnalisation sont définies dans un fichier appelé kustomization.yaml.
+[Illustration](/thotify/k8s_&_devops/image-29-22.png)
+
+ 
 
 
 
