@@ -1,0 +1,89 @@
+---
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion Firebase</title>
+    <style>
+      body {
+        background-color: #121212; /* Couleur de fond sombre */
+        color: #ffffff; /* Texte blanc */
+        font-family: 'Arial', sans-serif; /* Polices standards */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        background-color: #1e1e1e; /* Fond du formulaire */
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+      }
+
+      input {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: none;
+        border-radius: 4px;
+        background-color: #2e2e2e;
+        color: #fff;
+      }
+
+      .connectButton {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #6200ea;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .connectButton:hover {
+        background-color: #3700b3;
+      }
+      
+      .returnButton {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #74b9ff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 0.5vh;
+      }
+
+      .returnButton:hover {
+        background-color: #74b9ff;
+      }
+
+      input::placeholder {
+        color: #b0b0b0; /* Couleur du placeholder */
+      }
+    </style>
+  </head>
+  <body>
+    <form id="loginForm">
+      <div style="display: flex;justify-content: center;flex-direction: column;">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Mot de passe" required />
+      </div>
+      
+      <div style="display: flex;justify-content: center;flex-direction: column;">
+        <button class="connectButton" type="submit">Connexion</button>
+        <button class="returnButton" onclick="location.href = '/thotify/home/summary/' " type="button">Retour</button>
+      </div>
+      
+    </form>
+
+    
+    <script is:inline type="module" src="../scripts/login.js"></script>
+  </body>
+</html>
