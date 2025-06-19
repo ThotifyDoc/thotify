@@ -120,7 +120,7 @@ Les serveurs et les agents exécutent le kubelet, l'environnement d'exécution d
 
 ---
 
-[Illustration entre serveur et agent](/thotitfy/k8s_&_devops/how-it-works-k3s-revised-9c025ef482404bca2e53a89a0ba7a3c5.svg)
+![Illustration entre serveur et agent](/thotitfy/k8s_&_devops/how-it-works-k3s-revised-9c025ef482404bca2e53a89a0ba7a3c5.svg)
 
 ## Cas concret de la docucmentation
 Les **nœuds d'agent** sont enregistrés avec une **connexion WebSocket** initiée par le **k3s agentprocessus**, et cette connexion est 
@@ -317,7 +317,7 @@ Ce **finalizer** ne sera supprimé qu’**après le nettoyage effectif de la res
 ---
 ## Ingress (et pourquoi le préférer)
 
-[Illustration ingress](/thotify/k8s_&_devops/ingress_archi.png)
+![Illustration ingress](/thotify/k8s_&_devops/ingress_archi.png)
 
 ### Ingress
 Rendez votre service **réseau HTTP** (ou HTTPS) accessible en utilisant un mécanisme de configuration "protocol-aware", qui comprend les concepts web comme les **URI**, **hostnames**, **paths**, etc.
@@ -355,7 +355,7 @@ Pour **exposer des services autres que HTTP et HTTPS** sur Internet, on utilise 
                   number: 80
 ```
 
-[Illustration du routage](/thotify/k8s_&_devops/ingress_routing.png)
+![Illustration du routage](/thotify/k8s_&_devops/ingress_routing.png)
 
 
 ### Ingress Controller
@@ -503,7 +503,7 @@ et que j'associe a mon pod dans **volumes:**
 ## Les Quorums
 (raft)
 
-[Illustration du conscensus raft](/thotify/k8s_&_devops/raft_conscensus.gif)
+![Illustration du conscensus raft](/thotify/k8s_&_devops/raft_conscensus.gif)
 
 K8s utilise etcd comme base de données centrale.
 Etcd fonctionne à quorum :
@@ -540,7 +540,7 @@ manifest example:
 
 L'API RBAC déclare quatre types d'objets Kubernetes : Role , ClusterRole , RoleBinding et ClusterRoleBinding . Vous pouvez décrire ou modifier le RBAC. objets en utilisant des outils tels que kubectl, comme tout autre objet Kubernetes.
 
-![Voir doc pour en apprendre plus sur: Role, ClusterRole, RoleBinding et ClusterRoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+[Voir doc pour en apprendre plus sur: Role, ClusterRole, RoleBinding et ClusterRoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
 ## Other orchestrator 
 
@@ -549,7 +549,7 @@ L'API RBAC déclare quatre types d'objets Kubernetes : Role , ClusterRole , Role
 ### Nomad 
 
 [guide](https://blog.cloudflare.com/how-we-use-hashicorp-nomad/?ref=devopscube.com/)
-[Illustration](/thotify/k8s_&_devops/image3.png)
+![Illustration](/thotify/k8s_&_devops/image3.png)
 
 
 ## Tools
@@ -600,7 +600,7 @@ Le processus de overlaying consiste à créer une version personnalisée d’un 
 manifest de base + manifest overlay = manifest personnalisé
 
 Toutes les spécifications de personnalisation sont définies dans un fichier appelé kustomization.yaml.
-[Illustration](/thotify/k8s_&_devops/image-29-22.png)
+![Illustration](/thotify/k8s_&_devops/image-29-22.png)
 
 ## Terminology 
 
@@ -633,7 +633,7 @@ Toutes les spécifications de personnalisation sont définies dans un fichier ap
 
 
 # Ressources
-![Comprendre K8s dans le détails, la plupart des liens ci-dessous sont tirés de cet article](https://devopscube.com/kubernetes-architecture-explained/)
-![Comprendre la concurrence RAFT](https://raft.github.io/) 
-![Théorème CAP & concurrence ](https://en.wikipedia.org/wiki/CAP_theorem?ref=devopscube.com)
-![Gestion de la planification avancée](https://github.com/kubernetes/enhancements/blob/master/keps/sig-scheduling/624-scheduling-framework/README.md)
+[Comprendre K8s dans le détails, la plupart des liens ci-dessous sont tirés de cet article](https://devopscube.com/kubernetes-architecture-explained/)
+[Comprendre la concurrence RAFT](https://raft.github.io/) 
+[Théorème CAP & concurrence ](https://en.wikipedia.org/wiki/CAP_theorem?ref=devopscube.com)
+[Gestion de la planification avancée](https://github.com/kubernetes/enhancements/blob/master/keps/sig-scheduling/624-scheduling-framework/README.md)
