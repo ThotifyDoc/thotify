@@ -25,7 +25,7 @@ Lorsque j'ai débuté mon parcours DevOps, je passais des journées entières à
 ## Linux
 
 ![Représentation de linux dans le monde](/thotify/k8s_&_devops/linux-usage-1.png)
-![Distribution utilisées](thotify/k8s_&_devops/linux-vendor-allocation-min-1.png)
+![Distribution utilisées](/thotify/k8s_&_devops/linux-vendor-allocation-min-1.png)
 
 
 ## Composants d'infrastructure
