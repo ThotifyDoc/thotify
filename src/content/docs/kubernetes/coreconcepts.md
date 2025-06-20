@@ -120,7 +120,7 @@ Les serveurs et les agents exécutent le kubelet, l'environnement d'exécution d
 
 ---
 
-![Illustration entre serveur et agent](/thotitfy/k8s_&_devops/how-it-works-k3s-revised.png)
+![Illustration entre serveur et agent](/thotify/k8s_&_devops/how-it-works-k3s-revised.png)
 
 ## Cas concret de la docucmentation
 Les **nœuds d'agent** sont enregistrés avec une **connexion WebSocket** initiée par le **k3s agentprocessus**, et cette connexion est 
