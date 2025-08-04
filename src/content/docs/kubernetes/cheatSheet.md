@@ -27,3 +27,6 @@ Une fois la configuration terminée, on peut utiliser le deployment dans k8s
 ```bash
 kubectl apply -f apache-deployment.yaml
 ```
+# get all
+```bash 
+kubectl get all --all-namespaces```

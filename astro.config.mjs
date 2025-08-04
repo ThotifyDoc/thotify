@@ -321,6 +321,15 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
+              label: "SCRUM",
+              slug: "agile/scrum",
+              
+              badge: {
+                text: "In progress",
+                class: "badge-in-progress",
+              },
+            },
+            {
               label: "SAfe",
               slug: "agile/safe",
               

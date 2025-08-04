@@ -637,3 +637,45 @@ Toutes les spécifications de personnalisation sont définies dans un fichier ap
 [Comprendre la concurrence RAFT](https://raft.github.io/) 
 [Théorème CAP & concurrence ](https://en.wikipedia.org/wiki/CAP_theorem?ref=devopscube.com)
 [Gestion de la planification avancée](https://github.com/kubernetes/enhancements/blob/master/keps/sig-scheduling/624-scheduling-framework/README.md)
+
+# Démo 
+
+## intro
+
+## Architecture 
+
+## commandes utilisées 
+
+Lorsque j'effectue une commande si je ne précise aucun namespace, alors j'aurais tous les composant issu du namespace default 
+Sinon j'aurais ceux du namespace concerné. Avec -A j'aurais un résultat issu de tous les namespaces confondu 
+
+
+Ingress Controller
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.10/config/manifests/metallb-native.yaml
+il faut ensuite relier tout ça pour exposer avec l'ingress controller
+kubectl create deployment nginx --image=nginx
+
+kubectl expose deployment nginx --port=80 --target-port=80 --name=nginx-service
+Le service est exposé en local 
+
+Création d'un ingress vers lequel rediriger le trafik interne 
+kubectl apply -f
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: monsite.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
