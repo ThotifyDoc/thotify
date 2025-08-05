@@ -123,6 +123,19 @@ export default defineConfig({
             text: "Nouveau",
             class: "badge-new",
           },
+        },{
+          label: "C",
+          collapsed: true,
+          items: [
+            {
+              label: "Buffer Overflow",
+              slug: "c/buffer_overflow",
+            }
+          ],
+          badge: {
+            text: "Nouveau",
+            class: "badge-new",
+          },
         },
         {
           label: "VM, Shell et Linux",
