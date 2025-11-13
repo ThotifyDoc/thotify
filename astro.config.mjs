@@ -117,6 +117,9 @@ export default defineConfig({
             },{
               label: "OpenCV",
               slug: "cplus/opencv",
+            },{
+              label: "Vector vs Array Memory",
+              slug: "cplus/vector_memory",
             },
           ],
           badge: {
