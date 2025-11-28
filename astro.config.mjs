@@ -72,7 +72,8 @@ export default defineConfig({
               },
             }
           ],
-        },{
+        },
+        {
           label: "Blender",
           collapsed: true,
           items: [
@@ -107,7 +108,8 @@ export default defineConfig({
             text: "Nouveau",
             class: "badge-new",
           },
-        },{
+        },
+        {
           label: "C++",
           collapsed: true,
           items: [
@@ -509,8 +511,7 @@ export default defineConfig({
                 text: "Nouveau",
                 class: "badge-new",
               },
-            },
-        
+            }
           ]
         }
       ],

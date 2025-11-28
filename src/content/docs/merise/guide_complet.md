@@ -1,11 +1,11 @@
 ---
 layout: ../../../layouts/BaseLayout.astro
 title: Guide complet
-description: Guide basé sur le livre: Guide pratique (modélisation des données et des traitements, manipulations avec le langage SQL, conception d'une application mobile Android ou IOS)
+description: Guide basé sur le livre "Guide pratique (modélisation des données et des traitements, manipulations avec le langage SQL, conception d'une application mobile Android ou IOS)"
 ---
 
-Sommaire
-
+<!-- Sommaire -->
+<!-- 
 # Avant propos
 # L'approche systémique
 # La séparation des données et des traitements
@@ -19,7 +19,7 @@ Sommaire
 ## Le niveau physique
 
 # Les dépendances fonctionnelles 
-# Le modèle conceptuel de données 
+# Le modèle conceptuel de données  -->
 
 
 # Avant propos 
