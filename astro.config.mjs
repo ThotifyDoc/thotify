@@ -481,6 +481,21 @@ export default defineConfig({
               },
             }
           ]
+        },
+        {
+          label: "Merise",
+          collapsed: true,
+          items: [
+            {
+              label: "Module 3",
+              slug: "anssi-dpo/mooc-anssi",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            },
+        
+          ]
         }
       ],
     }),

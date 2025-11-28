@@ -287,3 +287,4 @@ sources:
 [Scrum](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#zoom=100)
 [Définition du lean](https://www.manutan.com/blog/fr/lexique/le-lean-management-definition-et-outils)
 [Manifeste](https://manifesteagile.fr/)
+[Glossaire](https://www.scruminc.com/fr/scrum-glossary/)
