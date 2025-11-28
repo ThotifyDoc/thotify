@@ -497,6 +497,21 @@ export default defineConfig({
               },
             }
           ]
+        },
+        {
+          label: "Merise",
+          collapsed: true,
+          items: [
+            {
+              label: "Guide complet",
+              slug: "merise/guide_complet",
+              badge: {
+                text: "Nouveau",
+                class: "badge-new",
+              },
+            },
+        
+          ]
         }
       ],
     }),
