@@ -487,8 +487,8 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              label: "Module 3",
-              slug: "anssi-dpo/mooc-anssi",
+              label: "Guide complet",
+              slug: "merise/guide_complet",
               badge: {
                 text: "Nouveau",
                 class: "badge-new",
