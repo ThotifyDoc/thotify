@@ -9,9 +9,13 @@ export default defineConfig({
     starlight({
       title: "Thotify",
       customCss: ["./src/assets/style/style.css"],
-      social: {
-        github: "https://github.com/ThotifyDoc/thotify",
-      },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/ThotifyDoc/thotify",
+        },
+      ],
 
       sidebar: [
         {
@@ -497,7 +501,7 @@ export default defineConfig({
               },
             }
           ]
-        }
+        },
       ],
     }),
   ],

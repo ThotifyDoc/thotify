@@ -126,9 +126,89 @@ Suite à l'interview et à la collecte des documents, il est nécessaire de cent
 
 Le dictionnaire de données est un document qui permet de recenser, de classer et de trier toute informations (les données) collectées lors des entretiens ou de l'étude des documents. Le dictionnaire peut etre plus ou moins élaboré suivant le niveau de granularité souhaité. En voici un exemple:
 
-| Nom de la donnée | Format | Longueur | Type                 | Règle de calcul | Règle de gestion | Document |
-|-----------------|--------|----------|--------------------|----------------|-----------------|----------|
-|                 |        |          | Élémentaire | Calculé |                |                 |          |
-|                 |        |          |            |        |                |                 |          |
-|                 |        |          |            |        |                |                 |          |
-|                 |        |          |            |        |                |                 |          |
+| Nom              | Format         | Longueur | Type E | Type C | Règle de calcul | Règle de gestion | Document |
+|------------------|----------------|----------|--------|--------|------------------|-------------------|----------|
+| Numéro           | Numérique      |          | X      |        |                  |                   | Fiche    |
+| Nom              | Alphabétique   | 30       | X      |        |                  |                   | //       |
+| Prénom           | Alphabétique   | 30       | X      |        |                  |                   | //       |
+| Adresse          | Alphanumérique | 50       | X      |        |                  |                   | //       |
+| Code postal      | Alphanumérique | 10       | X      |        |                  |                   | //       |
+| Ville            | Alphabétique   | 50       | X      |        |                  |                   | //       |
+| Téléphone        | Alphanumérique | 15       | X      |        |                  |                   | //       |
+| Mail             | Alphanumérique | 50       | X      |        |                  |                   | //       |
+| Date d’adhésion  | Date           |          | X      |        |                  |                   | //       |
+
+
+| Nom          | Format         | Longueur | Type E | Type C | Règle de calcul             | Règle de gestion | Document |
+|--------------|----------------|----------|--------|--------|------------------------------|-------------------|----------|
+| NumCli       | Numérique      |          | X      |        |                              |                   | Bristol  |
+| Nom          | Alphabétique   | 30       | X      |        |                              |                   | //       |
+| Prénom       | Alphabétique   | 30       | X      |        |                              |                   | //       |
+| Adresse      | Alphanumérique | 50       | X      |        |                              |                   | //       |
+| Code postal  | Alphanumérique | 10       | X      |        |                              |                   | //       |
+| Ville        | Alphabétique   | 50       | X      |        |                              |                   | //       |
+| CodeArticle  | Alphanumérique | 15       | X      |        |                              |                   | //       |
+| Désignation  | Alphabétique   | 50       | X      |        |                              |                   | //       |
+| PrixUnitaire | Numérique      |          | X      |        |                              |                   | //       |
+| Qté          | Numérique      |          | X      |        |                              |                   | //       |
+| Date         | Date           |          | X      |        |                              |                   | //       |
+| TotalLigne   | Numérique      |          |        | X      | PrixUnitaire × Qté           |                   | //       |
+| TotalFacture | Numérique      |          |        | X      | Somme des TotalLigne         |                   | //       |
+
+
+# MCD
+
+Introduction 
+
+Le modèle conceptuel des données (MCD) introduit la notion d'entités, de relations et de propriétés. Nous allons commencer par voir certains aspects "théoriques" avant de plonger dans la pratique.
+
+Le MCD décrit de façon formelle les données utilisées par le système d'information. La représentation graphique, simple et accessible, permet ç un non-informaticien de participer à l'élaboration de ce modèle. Les éléments de base constituant un modèle conceptuel ds données sont: 
+- Les propriétés;
+- Les entités;
+- Les relations;
+
+
+## Les notions a connaître 
+
+## 1.2 Les entités ou objets
+
+Comme il est aisé de le constater, les clients sont définis par certaines propriétés (numéro, nom, prénom...). Le fait de les regrouper amène naturellement à créer une entité **Clients**.
+
+Le symbolisme retenu est le suivant :
+
+| Entité Clients | Propriétés |
+| :---: | :---: |
+| Clients | Numéro |
+| | Nom |
+| | Prénom |
+| | Adresse |
+| | Code postal |
+| | Ville |
+
+### L'identifiant
+
+Une de ces propriétés a un rôle bien précis ; c'est l'**identifiant**, nommé aussi la **clé**.
+
+L'identifiant permet de connaître de façon **sûre et unique** l'ensemble des propriétés qui participent à l'entité.
+
+Le nommage de l'identifiant évoluera au fil des diagrammes mais dans le MCD il doit être compris par tous les acteurs du projet.
+
+## Les relations 
+
+Le n représente la notion de « plusieurs » ; ici, nous avons représenté le fait qu'un client peut commander un ou plusieurs articles.
+
+Il faut que nous nous posions les mêmes questions pour l'article :
+
+Combien de fois au minimum un article peut-il être commandé par un client ?
+
+Combien de fois au maximum un article peut-il être commandé par un client ?
+
+Pour le minimum, nous pouvons reformuler la question de la façon suivante : y a-t-on des articles qui peuvent ne jamais être commandés ?
+
+Si nous répondons oui, dans ce cas la cardinalité minimale est 0.
+
+Et pour le maximum : y a-t-on des articles qui peuvent être commandés plusieurs fois ?
+
+Nous pouvons espérer que oui. Dans ce cas, la cardinalité maximale est n.
+
+![MCD sans relations](/thotify/merise/mcd_no_relation.jpeg) 
